@@ -1,0 +1,56 @@
+[team]
+id = "example-team"
+name = "Example Team"
+description = "Copy this file to teams/<slug>/team.toml and customize it."
+default_mode = "auto"
+max_parallel = 4
+max_specialists = 4
+final_integrator = "coordinator"
+default_reviewer = "reviewer"
+
+[[roles]]
+id = "coordinator"
+title = "Coordinator"
+phase = "plan"
+mission = "Clarify the objective and integrate the final result."
+challenge = ["scope creep", "unnecessary fan-out"]
+keywords = ["plan", "strategy", "coordinate"]
+skills = ["orchestrate-team"]
+context = ["docs/**"]
+model_class = "deep"
+context_budget_tokens = 16000
+handoff_budget_tokens = 1800
+risk_ceiling = "medium"
+outputs = ["work plan", "integrated handoff"]
+always = true
+
+[[roles]]
+id = "specialist"
+title = "Specialist"
+phase = "work"
+mission = "Perform the domain work and return evidence."
+challenge = ["unsupported assumptions"]
+keywords = ["research", "build", "analyze"]
+skills = []
+context = []
+model_class = "balanced"
+context_budget_tokens = 12000
+handoff_budget_tokens = 1500
+risk_ceiling = "medium"
+outputs = ["domain deliverable"]
+
+[[roles]]
+id = "reviewer"
+title = "Reviewer"
+phase = "review"
+mission = "Independently test the result against evidence and the objective."
+challenge = ["overconfidence", "missing evidence"]
+keywords = ["review", "quality", "verify"]
+skills = []
+context = []
+model_class = "deep"
+context_budget_tokens = 12000
+handoff_budget_tokens = 1400
+risk_ceiling = "high"
+outputs = ["review findings", "readiness verdict"]
+always = true
