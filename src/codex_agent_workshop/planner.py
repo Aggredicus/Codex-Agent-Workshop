@@ -6,8 +6,9 @@ import re
 
 from .config import Role, Team
 
-TOKEN = re.compile(r"[a-z0-9][a-z0-9-]{2,}")
+TOKEN = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
 STOPWORDS = {"and", "the", "for", "with", "from", "into", "prepare", "client", "work", "business", "task", "review", "create", "make"}
+MIN_WORKER_SCORE = 3
 
 
 @dataclass(frozen=True)
@@ -44,18 +45,45 @@ class WorkPlan:
         return data
 
 
+def _plural_forms(token: str) -> set[str]:
+    forms = {token}
+    if len(token) <= 2:
+        return forms
+    if token.endswith("y") and not token.endswith(("ay", "ey", "iy", "oy", "uy")):
+        forms.add(token[:-1] + "ies")
+    elif token.endswith(("s", "x", "z", "ch", "sh")):
+        forms.add(token + "es")
+    else:
+        forms.add(token + "s")
+    return forms
+
+
+def _keyword_matches(keyword: str, goal_tokens: tuple[str, ...]) -> bool:
+    keyword_tokens = tuple(TOKEN.findall(keyword.lower()))
+    if not keyword_tokens:
+        return False
+    width = len(keyword_tokens)
+    if width > len(goal_tokens):
+        return False
+    for start in range(len(goal_tokens) - width + 1):
+        window = goal_tokens[start:start + width]
+        if all(actual in _plural_forms(expected) for actual, expected in zip(window, keyword_tokens)):
+            return True
+    return False
+
+
 def _score(role: Role, goal: str) -> tuple[int, list[str]]:
-    normalized = goal.lower()
-    tokens = {token for token in TOKEN.findall(normalized) if token not in STOPWORDS}
+    goal_tokens = tuple(TOKEN.findall(goal.lower()))
+    tokens = {token for token in goal_tokens if token not in STOPWORDS}
     score = 0
     reasons: list[str] = []
     for keyword in role.keywords:
-        key = keyword.lower().strip()
-        if key and key in normalized:
-            score += 4 if " " in key else 3
+        if _keyword_matches(keyword, goal_tokens):
+            keyword_width = len(TOKEN.findall(keyword.lower()))
+            score += 4 if keyword_width > 1 else 3
             reasons.append(f"matched {keyword!r}")
-    searchable = f"{role.title} {role.mission}".lower()
-    overlap = sorted(token for token in tokens if token in searchable)
+    searchable_tokens = set(TOKEN.findall(f"{role.title} {role.mission}".lower()))
+    overlap = sorted(token for token in tokens if token in searchable_tokens)
     if overlap:
         score += min(len(overlap), 4)
         reasons.append("mission overlap: " + ", ".join(overlap[:4]))
@@ -102,14 +130,20 @@ def build_plan(team: Team, goal: str, *, mode: str = "auto") -> WorkPlan:
         for role in team.roles if role.phase == "work"
     ]
     worker_candidates.sort(key=lambda row: (-row[0], row[1].id))
-    selected_workers = [row for row in worker_candidates if row[0] > 0][:team.max_specialists]
+    selected_workers = [row for row in worker_candidates if row[0] >= MIN_WORKER_SCORE][:team.max_specialists]
     if not selected_workers:
         selected_workers = worker_candidates[:min(2, team.max_specialists)]
+    selected_worker_ids = {role.id for _, role, _ in selected_workers}
 
     reviewers = [
         role for role in team.roles
         if role.phase == "review"
-        and (role.always or scored[role.id][0] > 0 or role.id == team.default_reviewer)
+        and (
+            role.always
+            or scored[role.id][0] >= MIN_WORKER_SCORE
+            or role.id == team.default_reviewer
+            or bool(selected_worker_ids.intersection(role.review_for))
+        )
     ]
     unique_reviewers: list[Role] = []
     seen_review: set[str] = set()
@@ -131,7 +165,12 @@ def build_plan(team: Team, goal: str, *, mode: str = "auto") -> WorkPlan:
             role,
             "default independent reviewer"
             if role.id == team.default_reviewer
-            else "; ".join(scored[role.id][1]) or "review policy",
+            else (
+                "review policy covers selected role(s): "
+                + ", ".join(sorted(selected_worker_ids.intersection(role.review_for)))
+                if selected_worker_ids.intersection(role.review_for)
+                else "; ".join(scored[role.id][1]) or "review policy"
+            ),
         )
         for role in unique_reviewers
     )
