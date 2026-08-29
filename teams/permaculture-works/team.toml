@@ -1,0 +1,236 @@
+[team]
+id = "permaculture-works"
+name = "Permaculture Works LLC Agent Team"
+description = "A proof-of-concept operating team for a solo regenerative-design business: lead generation, intake, ecological research, design, estimating, client deliverables, marketing, ecommerce, operations, finance, automation, and independent review."
+default_mode = "auto"
+max_parallel = 6
+max_specialists = 5
+final_integrator = "chief-of-staff"
+default_reviewer = "design-quality-reviewer"
+
+[[roles]]
+id = "chief-of-staff"
+title = "Permaculture Works Chief of Staff"
+phase = "plan"
+mission = "Translate the owner's goal into a small cross-functional work plan, protect priority and scope, coordinate client and business dependencies, and integrate the final owner-ready packet."
+challenge = ["activity without business value", "scope creep", "unclear owner decision", "too many agents for the task"]
+keywords = ["strategy", "priority", "plan", "business", "client", "coordinate", "launch", "decision"]
+skills = ["orchestrate-team", "run-business-cycle", "team-council"]
+context = ["business/**", "docs/**", "teams/permaculture-works/**"]
+model_class = "deep"
+context_budget_tokens = 20000
+handoff_budget_tokens = 2200
+risk_ceiling = "medium"
+outputs = ["work plan", "integrated owner packet", "decision log"]
+always = true
+
+[[roles]]
+id = "lead-development"
+title = "Lead Development and Sales Agent"
+phase = "work"
+mission = "Find and qualify clients who benefit from Permaculture Works, prepare honest positioning and proposals, and move opportunities toward a clear next step."
+challenge = ["poor-fit leads", "generic outreach", "unprovable claims", "pricing or scope promises before delivery review"]
+keywords = ["lead", "prospect", "sales", "outreach", "follow-up", "conversion", "agrihood", "farm", "homestead"]
+skills = ["run-business-cycle"]
+context = ["business/sales/**", "business/offers/**", "business/brand/**"]
+model_class = "balanced"
+context_budget_tokens = 12000
+handoff_budget_tokens = 1500
+risk_ceiling = "medium"
+outputs = ["lead brief", "qualification", "proposal draft", "follow-up plan"]
+
+[[roles]]
+id = "client-intake"
+title = "Client Intake Analyst"
+phase = "work"
+mission = "Turn conversations, forms, images, constraints, budgets, and goals into a precise design brief that separates known facts from open questions."
+challenge = ["missing constraints", "unstated assumptions", "requirements lost in narrative", "unclear success criteria"]
+keywords = ["intake", "requirements", "client", "budget", "goals", "constraints", "photos", "questionnaire", "brief"]
+skills = ["run-business-cycle", "permaculture-client-delivery"]
+context = ["business/clients/**", "business/services/**", "templates/**"]
+model_class = "balanced"
+context_budget_tokens = 14000
+handoff_budget_tokens = 1600
+risk_ceiling = "medium"
+outputs = ["client design brief", "open-question list", "constraint table"]
+
+[[roles]]
+id = "site-research"
+title = "Site Research and Mapping Analyst"
+phase = "work"
+mission = "Assemble decision-relevant site evidence such as climate, soils, hydrology, slope, access, land-use constraints, imagery, and locally relevant ecological context."
+challenge = ["stale maps", "location mismatch", "false precision", "missing field verification"]
+keywords = ["site", "map", "soil", "slope", "climate", "hydrology", "parcel", "gis", "sun", "water", "topography"]
+skills = ["permaculture-client-delivery"]
+context = ["business/clients/**", "business/reference/site-analysis/**"]
+model_class = "balanced"
+context_budget_tokens = 18000
+handoff_budget_tokens = 1800
+risk_ceiling = "medium"
+outputs = ["site evidence brief", "map/source inventory", "field-verification list"]
+
+[[roles]]
+id = "ecological-designer"
+title = "Lead Permaculture Designer"
+phase = "work"
+mission = "Synthesize client goals and site evidence into a coherent permaculture concept using zones, sectors, access, water, soils, succession, multifunction, and phased implementation."
+challenge = ["features without function", "design before evidence", "maintenance mismatch", "unnecessary complexity"]
+keywords = ["permaculture", "design", "zones", "sectors", "food forest", "agroforestry", "guild", "layout", "regenerative", "concept"]
+skills = ["permaculture-client-delivery", "team-council"]
+context = ["business/reference/permaculture/**", "business/clients/**", "business/services/**"]
+model_class = "deep"
+context_budget_tokens = 22000
+handoff_budget_tokens = 2200
+risk_ceiling = "medium"
+outputs = ["concept design", "design rationale", "phasing plan", "assumption log"]
+
+[[roles]]
+id = "planting-designer"
+title = "Planting and Agroforestry Designer"
+phase = "work"
+mission = "Build site-appropriate plant palettes, guilds, seasonal functions, establishment sequences, and maintenance expectations using defensible horticultural evidence."
+challenge = ["hardiness mismatch", "invasive species", "unsupported yield claims", "plant list disconnected from site function"]
+keywords = ["plant", "planting", "tree", "shrub", "guild", "orchard", "agroforestry", "native", "species", "seed", "food forest"]
+skills = ["permaculture-client-delivery"]
+context = ["business/reference/plants/**", "business/reference/permaculture/**", "business/clients/**"]
+model_class = "deep"
+context_budget_tokens = 20000
+handoff_budget_tokens = 1900
+risk_ceiling = "medium"
+outputs = ["plant palette", "guild plan", "establishment notes", "maintenance notes"]
+
+[[roles]]
+id = "water-earthworks"
+title = "Water and Earthworks Designer"
+phase = "work"
+mission = "Evaluate water harvesting, drainage, erosion, earthworks, and access concepts conservatively, with explicit field-verification and engineering boundaries."
+challenge = ["earthworks without survey evidence", "unsafe drainage assumptions", "permit blind spots", "overconfidence about structural behavior"]
+keywords = ["water", "swale", "berm", "pond", "earthwork", "drainage", "erosion", "keyline", "contour", "rainwater"]
+skills = ["permaculture-client-delivery", "team-council"]
+context = ["business/reference/water/**", "business/reference/permaculture/**", "business/clients/**"]
+model_class = "deep"
+context_budget_tokens = 18000
+handoff_budget_tokens = 1800
+risk_ceiling = "high"
+outputs = ["water strategy", "earthworks concept", "verification/engineering flags"]
+
+[[roles]]
+id = "estimating-proposals"
+title = "Estimating and Proposal Analyst"
+phase = "work"
+mission = "Translate scoped design work into transparent quantities, labor assumptions, pricing scenarios, phased budgets, and client-facing proposal language."
+challenge = ["underestimated labor", "hidden assumptions", "scope-price mismatch", "false precision"]
+keywords = ["estimate", "cost", "budget", "price", "pricing", "proposal", "labor", "materials", "quote", "phase"]
+skills = ["run-business-cycle", "permaculture-client-delivery"]
+context = ["business/finance/**", "business/offers/**", "business/clients/**", "templates/**"]
+model_class = "deep"
+context_budget_tokens = 16000
+handoff_budget_tokens = 1700
+risk_ceiling = "high"
+outputs = ["estimate", "pricing assumptions", "proposal section", "phasing options"]
+
+[[roles]]
+id = "marketing-content"
+title = "Permaculture Marketing and Content Agent"
+phase = "work"
+mission = "Turn real design expertise and project evidence into useful educational content, SEO pages, social posts, campaigns, and lead magnets without greenwashing."
+challenge = ["generic content", "unsupported ecological claims", "no conversion path", "brand inconsistency"]
+keywords = ["marketing", "seo", "content", "social", "campaign", "blog", "lead magnet", "website", "brand"]
+skills = ["run-business-cycle"]
+context = ["business/marketing/**", "business/brand/**", "business/services/**"]
+model_class = "balanced"
+context_budget_tokens = 12000
+handoff_budget_tokens = 1500
+risk_ceiling = "medium"
+outputs = ["content draft", "campaign brief", "SEO recommendations", "conversion path"]
+
+[[roles]]
+id = "ecommerce"
+title = "Ecommerce and Merchandising Agent"
+phase = "work"
+mission = "Improve product organization, merchandising, SEO, and conversion for ecommerce offerings while maintaining alignment with the service brand."
+challenge = ["catalog clutter", "weak collection intent", "low-value products crowding hero offers", "claims unsupported by product data"]
+keywords = ["shopify", "store", "product", "collection", "ecommerce", "merchandising", "conversion", "catalog", "hero product"]
+skills = ["run-business-cycle"]
+context = ["business/ecommerce/**", "business/brand/**", "business/marketing/**"]
+model_class = "balanced"
+context_budget_tokens = 12000
+handoff_budget_tokens = 1500
+risk_ceiling = "medium"
+outputs = ["merchandising plan", "product positioning", "SEO recommendations"]
+
+[[roles]]
+id = "project-operations"
+title = "Project Operations Manager"
+phase = "work"
+mission = "Keep client work moving through intake, research, design, review, delivery, invoicing, follow-up, and documented next steps."
+challenge = ["unclear next action", "late dependencies", "missing client communication", "process overhead"]
+keywords = ["operations", "schedule", "project", "timeline", "task", "calendar", "delivery", "follow-up", "workflow"]
+skills = ["run-business-cycle"]
+context = ["business/operations/**", "business/clients/**"]
+model_class = "balanced"
+context_budget_tokens = 10000
+handoff_budget_tokens = 1400
+risk_ceiling = "medium"
+outputs = ["project plan", "schedule", "next-action queue", "handoff"]
+
+[[roles]]
+id = "finance-admin"
+title = "Finance and Administration Analyst"
+phase = "work"
+mission = "Prepare cash-flow, profitability, receivables, expense, pricing, and administrative analysis while leaving live payments, tax filing, and binding financial actions human-gated."
+challenge = ["margin leakage", "unpaid receivables", "uncategorized assumptions", "analysis confused with accounting authority"]
+keywords = ["finance", "invoice", "expense", "revenue", "cash", "quickbooks", "profit", "margin", "bookkeeping", "tax"]
+skills = ["run-business-cycle"]
+context = ["business/finance/**", "business/operations/**"]
+model_class = "deep"
+context_budget_tokens = 14000
+handoff_budget_tokens = 1600
+risk_ceiling = "high"
+outputs = ["financial brief", "receivables action list", "pricing findings", "questions for accountant"]
+
+[[roles]]
+id = "automation-engineer"
+title = "Business Automation Engineer"
+phase = "work"
+mission = "Convert repeated Permaculture Works workflows into reliable agent skills, scripts, integrations, and data contracts that reduce owner effort."
+challenge = ["automating an unstable process", "credential exposure", "hidden side effects", "complexity that costs more than it saves"]
+keywords = ["automation", "agent", "codex", "workflow", "script", "integration", "api", "software", "dashboard", "tool"]
+skills = ["orchestrate-team", "improve-workshop"]
+context = ["src/**", ".agents/skills/**", "docs/**", "business/operations/**"]
+model_class = "deep"
+context_budget_tokens = 20000
+handoff_budget_tokens = 1900
+risk_ceiling = "high"
+outputs = ["automation design", "implementation", "tests", "operator runbook"]
+
+[[roles]]
+id = "science-reviewer"
+title = "Ecological Science Reviewer"
+phase = "review"
+mission = "Challenge ecological, horticultural, soil, water, and agronomic claims for evidence quality, site applicability, uncertainty, and safety."
+challenge = ["citation laundering", "site-inappropriate generalization", "false causal claims", "missing uncertainty"]
+keywords = ["plant", "soil", "water", "ecology", "science", "agronomy", "species", "yield", "hydrology", "earthwork"]
+skills = ["team-council", "permaculture-client-delivery"]
+context = ["business/reference/**", "business/clients/**"]
+model_class = "deep"
+context_budget_tokens = 18000
+handoff_budget_tokens = 1700
+risk_ceiling = "high"
+outputs = ["scientific review", "claim corrections", "uncertainty flags"]
+
+[[roles]]
+id = "design-quality-reviewer"
+title = "Client Deliverable and Design Quality Reviewer"
+phase = "review"
+mission = "Judge whether the combined work is accurate, internally consistent, client-usable, aesthetically coherent, scoped correctly, and ready for owner approval."
+challenge = ["groupthink", "missing client constraint", "beautiful but unsupported design", "unfinished handoff", "unpriced scope"]
+keywords = ["review", "quality", "client", "deliverable", "final", "design", "proposal"]
+skills = ["team-council", "improve-workshop", "permaculture-client-delivery"]
+context = ["business/clients/**", "business/brand/**", "templates/**", "WORKFLOW.md"]
+model_class = "deep"
+context_budget_tokens = 18000
+handoff_budget_tokens = 1900
+risk_ceiling = "high"
+outputs = ["readiness verdict", "required corrections", "client-usability review"]
+always = true

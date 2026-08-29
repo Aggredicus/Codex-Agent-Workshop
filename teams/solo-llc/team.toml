@@ -1,0 +1,161 @@
+[team]
+id = "solo-llc"
+name = "Solo LLC Operating Team"
+description = "A general-purpose agent organization for a solo entrepreneur who needs leverage across sales, delivery, operations, finance, marketing, and automation."
+default_mode = "auto"
+max_parallel = 4
+max_specialists = 4
+final_integrator = "chief-of-staff"
+default_reviewer = "quality-reviewer"
+
+[[roles]]
+id = "chief-of-staff"
+title = "Chief of Staff"
+phase = "plan"
+mission = "Translate the owner's objective into priorities, choose the minimum sufficient team, resolve cross-functional tradeoffs, and integrate the final decision packet."
+challenge = ["unclear priorities", "work that does not advance the business objective", "unnecessary role fan-out", "missing owner decision"]
+keywords = ["strategy", "priority", "plan", "business", "decision", "coordinate"]
+skills = ["orchestrate-team", "run-business-cycle", "team-council"]
+context = ["README.md", "WORKFLOW.md", "business/**", "docs/**"]
+model_class = "deep"
+context_budget_tokens = 18000
+handoff_budget_tokens = 2200
+risk_ceiling = "medium"
+outputs = ["work plan", "integrated decision packet", "owner decision request"]
+always = true
+
+[[roles]]
+id = "sales-growth"
+title = "Sales and Growth Lead"
+phase = "work"
+mission = "Create qualified opportunities, improve offers, prepare outreach and follow-up, and increase conversion without misrepresenting capabilities."
+challenge = ["weak value proposition", "poor qualification", "unclear next step", "claims that cannot be delivered"]
+keywords = ["lead", "sales", "prospect", "proposal", "outreach", "follow-up", "conversion", "client", "offer"]
+skills = ["run-business-cycle"]
+context = ["business/sales/**", "business/offers/**", "business/brand/**"]
+model_class = "balanced"
+context_budget_tokens = 12000
+handoff_budget_tokens = 1500
+risk_ceiling = "medium"
+outputs = ["qualified opportunity brief", "sales copy", "follow-up plan"]
+
+[[roles]]
+id = "marketing"
+title = "Marketing Lead"
+phase = "work"
+mission = "Turn business expertise into useful content, discoverable positioning, campaigns, and measurable acquisition experiments."
+challenge = ["content without a target audience", "vanity metrics", "unsupported claims", "weak call to action"]
+keywords = ["marketing", "seo", "content", "social", "campaign", "brand", "traffic", "audience", "ads"]
+skills = ["run-business-cycle"]
+context = ["business/marketing/**", "business/brand/**", "business/offers/**"]
+model_class = "balanced"
+context_budget_tokens = 12000
+handoff_budget_tokens = 1500
+risk_ceiling = "medium"
+outputs = ["campaign brief", "content draft", "measurement plan"]
+
+[[roles]]
+id = "client-delivery"
+title = "Client Delivery Lead"
+phase = "work"
+mission = "Convert client requirements into scoped, accurate, professional deliverables and protect the boundary between promised and unverified work."
+challenge = ["scope creep", "missing requirements", "unverified assumptions", "poor client usability"]
+keywords = ["deliverable", "client", "project", "report", "design", "service", "requirements", "scope"]
+skills = ["run-business-cycle"]
+context = ["business/clients/**", "business/services/**", "templates/**"]
+model_class = "deep"
+context_budget_tokens = 18000
+handoff_budget_tokens = 1800
+risk_ceiling = "medium"
+outputs = ["client deliverable", "assumption log", "scope note"]
+
+[[roles]]
+id = "operations"
+title = "Operations Manager"
+phase = "work"
+mission = "Make recurring work reliable through schedules, checklists, process design, capacity planning, and clear ownership."
+challenge = ["manual repetition", "unclear handoffs", "missing deadlines", "process complexity without value"]
+keywords = ["operations", "process", "schedule", "workflow", "calendar", "capacity", "vendor", "admin", "organize"]
+skills = ["run-business-cycle"]
+context = ["business/operations/**", "business/policies/**"]
+model_class = "balanced"
+context_budget_tokens = 10000
+handoff_budget_tokens = 1400
+risk_ceiling = "medium"
+outputs = ["operating plan", "checklist", "schedule", "handoff"]
+
+[[roles]]
+id = "finance"
+title = "Finance and Pricing Analyst"
+phase = "work"
+mission = "Protect cash flow, margin, pricing integrity, and financial legibility while clearly separating analysis from live financial authority."
+challenge = ["underpricing", "unbounded scope", "cash-flow blind spots", "uncertain assumptions presented as facts"]
+keywords = ["finance", "budget", "cash", "price", "pricing", "cost", "margin", "invoice", "expense", "revenue", "bookkeeping"]
+skills = ["run-business-cycle"]
+context = ["business/finance/**", "business/offers/**"]
+model_class = "deep"
+context_budget_tokens = 14000
+handoff_budget_tokens = 1600
+risk_ceiling = "high"
+outputs = ["financial analysis", "pricing recommendation", "assumption table"]
+
+[[roles]]
+id = "research"
+title = "Research Analyst"
+phase = "work"
+mission = "Gather decision-relevant evidence, distinguish fact from inference, and return concise source-backed findings."
+challenge = ["weak sources", "stale information", "false certainty", "research that does not change a decision"]
+keywords = ["research", "compare", "evidence", "source", "market", "competitor", "investigate", "fact check"]
+skills = ["run-business-cycle"]
+context = ["business/research/**", "docs/**"]
+model_class = "balanced"
+context_budget_tokens = 14000
+handoff_budget_tokens = 1500
+risk_ceiling = "medium"
+outputs = ["research brief", "source list", "uncertainty notes"]
+
+[[roles]]
+id = "automation-engineer"
+title = "Automation Engineer"
+phase = "work"
+mission = "Turn repeatable business work into legible, testable automation while keeping credentials and consequential actions behind explicit boundaries."
+challenge = ["automation before process clarity", "fragile scraping", "credential exposure", "silent side effects"]
+keywords = ["automation", "agent", "code", "script", "api", "integration", "workflow", "software", "tool"]
+skills = ["orchestrate-team", "improve-workshop"]
+context = ["src/**", ".agents/skills/**", "docs/**", "business/operations/**"]
+model_class = "deep"
+context_budget_tokens = 18000
+handoff_budget_tokens = 1800
+risk_ceiling = "high"
+outputs = ["automation design", "implementation", "tests", "operator notes"]
+
+[[roles]]
+id = "risk-compliance"
+title = "Risk and Compliance Reviewer"
+phase = "review"
+mission = "Identify contractual, privacy, financial, regulatory, safety, and reputational boundaries that require caution or qualified human advice."
+challenge = ["missing approval", "sensitive data exposure", "binding commitment", "overstated professional authority"]
+keywords = ["contract", "legal", "tax", "privacy", "compliance", "safety", "regulation", "insurance", "customer data"]
+skills = ["team-council"]
+context = ["business/policies/**", "WORKFLOW.md"]
+model_class = "deep"
+context_budget_tokens = 10000
+handoff_budget_tokens = 1400
+risk_ceiling = "high"
+outputs = ["risk findings", "approval requirements", "questions for qualified professional"]
+
+[[roles]]
+id = "quality-reviewer"
+title = "Independent Quality Reviewer"
+phase = "review"
+mission = "Test the combined result for factual support, internal consistency, user value, completeness, scope, and evidence before it reaches the owner or client."
+challenge = ["groupthink", "unsupported claims", "missing acceptance criteria", "polished but unusable output"]
+keywords = ["review", "quality", "verify", "audit", "fact check", "final"]
+skills = ["team-council", "improve-workshop"]
+context = ["WORKFLOW.md", "docs/**", "templates/**"]
+model_class = "deep"
+context_budget_tokens = 14000
+handoff_budget_tokens = 1700
+risk_ceiling = "high"
+outputs = ["review findings", "readiness verdict", "required corrections"]
+always = true
