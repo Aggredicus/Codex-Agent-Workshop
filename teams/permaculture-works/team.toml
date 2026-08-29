@@ -75,7 +75,7 @@ title = "Lead Permaculture Designer"
 phase = "work"
 mission = "Synthesize client goals and site evidence into a coherent permaculture concept using zones, sectors, access, water, soils, succession, multifunction, and phased implementation."
 challenge = ["features without function", "design before evidence", "maintenance mismatch", "unnecessary complexity"]
-keywords = ["permaculture", "design", "zones", "sectors", "food forest", "agroforestry", "guild", "layout", "regenerative", "concept"]
+keywords = ["site design", "zones", "sectors", "food forest", "agroforestry", "guild", "layout", "design concept", "regenerative design"]
 skills = ["permaculture-client-delivery", "team-council"]
 context = ["business/reference/permaculture/**", "business/clients/**", "business/services/**"]
 model_class = "deep"
@@ -218,6 +218,7 @@ context_budget_tokens = 18000
 handoff_budget_tokens = 1700
 risk_ceiling = "high"
 outputs = ["scientific review", "claim corrections", "uncertainty flags"]
+review_for = ["site-research", "ecological-designer", "planting-designer", "water-earthworks"]
 
 [[roles]]
 id = "design-quality-reviewer"

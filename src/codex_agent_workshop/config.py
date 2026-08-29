@@ -26,6 +26,7 @@ class Role:
     handoff_budget_tokens: int
     risk_ceiling: str
     outputs: tuple[str, ...]
+    review_for: tuple[str, ...] = ()
     always: bool = False
 
 
@@ -84,6 +85,7 @@ def load_team(path: Path) -> Team:
             handoff_budget_tokens=int(item.get("handoff_budget_tokens", 1800)),
             risk_ceiling=str(item.get("risk_ceiling", "medium")),
             outputs=_as_tuple(item.get("outputs"), "outputs"),
+            review_for=_as_tuple(item.get("review_for"), "review_for"),
             always=bool(item.get("always", False)),
         )
         roles.append(role)
@@ -135,6 +137,13 @@ def validate_team(team: Team, *, source: str = "<team>") -> None:
             problems.append(f"role {role.id!r} context budget is unrealistically small")
         if role.handoff_budget_tokens < 200:
             problems.append(f"role {role.id!r} handoff budget is unrealistically small")
+
+    for role in team.roles:
+        if role.review_for and role.phase != "review":
+            problems.append(f"role {role.id!r} may use review_for only with phase='review'")
+        unknown = sorted(set(role.review_for) - seen)
+        if unknown:
+            problems.append(f"role {role.id!r} review_for references unknown roles: {', '.join(unknown)}")
 
     if team.final_integrator not in seen:
         problems.append("final_integrator must name an existing role")

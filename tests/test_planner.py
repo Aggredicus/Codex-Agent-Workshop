@@ -51,3 +51,40 @@ def test_prompt_contains_harness_and_human_gate_guidance():
     assert "single model" in prompt.lower()
     assert "human-gated" in prompt.lower()
     assert "finance" in prompt.lower()
+
+
+def test_substrings_do_not_activate_unrelated_specialists():
+    team = load_team(ROOT / "teams" / "permaculture-works" / "team.toml")
+
+    leads = build_plan(
+        team,
+        "Find 20 qualified leads in West Michigan for permaculture design services, draft outreach, and build a follow-up plan.",
+        mode="multi",
+    )
+    lead_workers = {assignment.role for assignment in leads.waves[1]}
+    assert "lead-development" in lead_workers
+    assert "planting-designer" not in lead_workers  # 'guild' must not match 'qualified'
+    assert "ecological-designer" not in lead_workers
+
+    campaign = build_plan(
+        team,
+        "Create an SEO content campaign to generate qualified permaculture design leads from Grand Rapids.",
+        mode="multi",
+    )
+    campaign_workers = {assignment.role for assignment in campaign.waves[1]}
+    assert "marketing-content" in campaign_workers
+    assert "automation-engineer" not in campaign_workers  # 'api' must not match 'campaign'
+
+
+def test_reviewer_coverage_can_follow_selected_specialist():
+    team = load_team(ROOT / "teams" / "permaculture-works" / "team.toml")
+    plan = build_plan(
+        team,
+        "Design swales and berms for an eroding sloped property with drainage and pond opportunities.",
+        mode="multi",
+    )
+    work_roles = {assignment.role for assignment in plan.waves[1]}
+    review_roles = {assignment.role for assignment in plan.waves[2]}
+    assert "water-earthworks" in work_roles
+    assert "science-reviewer" in review_roles
+    assert "design-quality-reviewer" in review_roles
