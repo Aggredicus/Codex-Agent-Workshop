@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "output": "skill-inventory/inventory.json",
+  "source_globs": [
+    ".agents/skills/*/SKILL.md",
+    "teams/*/team.toml"
+  ],
+  "default_status": "documented-in-repository",
+  "discovery": {
+    "unrecognized": "omit-and-report-in-summary",
+    "symlinks": "deny",
+    "external_network": "deny",
+    "raw_text_in_output": "deny"
+  },
+  "notes": "This scans only repo-owned skill IDs and TOML role skill references. It does not profile humans, infer competence, or publish role assignments."
+}
