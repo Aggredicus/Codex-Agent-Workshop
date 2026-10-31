@@ -234,3 +234,11 @@ Improvement proposals must state evidence, hypothesis, change, expected benefit,
 - No requirement for native subagents.
 - No attempt to simulate an entire corporation on every task.
 - No token optimization that lowers output quality below the configured eval bar.
+
+## Local runtime interoperability and authority separation (experimental)
+
+CAW owns reusable skill taxonomy, work/role policy, and the single canonical `contracts/caw-law-work-packet.v1.json` definition. It expresses required skill IDs, execution boundaries, evidence and task intent **as proposals**.
+
+LAW owns physical-computer records, local agent-instance origins/versions, private SQLite inventory state and OS-level execution safety. See the [LAW integration guide](https://github.com/Aggredicus/Local-Agent-Workshop/blob/agent/caw-law-runtime-split-v01/docs/CAW_LAW_INTEGRATION.md). LAW consumes an explicitly supplied local copy of CAW's versioned JSON contract; CAW does not retain duplicate live local-registry code.
+
+Neither a CAW work packet nor a locally declared agent identity is an authorization credential. Execution must be enforced separately by a trusted sandbox provider, and GitHub PR approvals by authenticated branch/review rules. Both changes require independent review and verified cross-repository tests before protected merge.

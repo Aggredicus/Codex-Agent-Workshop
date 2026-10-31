@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-10-31",
+  "sync_policy": "Snapshot only. Before starting, open the linked GitHub issue to verify it is still open and unassigned; its GitHub status is authoritative.",
+  "tasks": [
+    {
+      "id": "caw-4",
+      "issue_number": 4,
+      "title": "Mobile and accessibility testing",
+      "repository": "Codex-Agent-Workshop",
+      "url": "https://github.com/Aggredicus/Codex-Agent-Workshop/issues/4",
+      "summary": "Run documented keyboard, mobile and assistive-technology checks; contribute verified findings and reproducible defects.",
+      "skills": [
+        "accessibility",
+        "testing",
+        "ux",
+        "documentation"
+      ],
+      "level": "beginner",
+      "kind": "quality assurance",
+      "status_at_verification": "open",
+      "labels": [
+        "help wanted",
+        "good first issue"
+      ]
+    },
+    {
+      "id": "caw-5",
+      "issue_number": 5,
+      "title": "Expand matcher regression tests",
+      "repository": "Codex-Agent-Workshop",
+      "url": "https://github.com/Aggredicus/Codex-Agent-Workshop/issues/5",
+      "summary": "Add focused reproducible tests for catalog constraints, request forms and optional browser behavior.",
+      "skills": [
+        "python",
+        "testing",
+        "github-actions",
+        "security"
+      ],
+      "level": "intermediate",
+      "kind": "test engineering",
+      "status_at_verification": "open",
+      "labels": [
+        "help wanted"
+      ]
+    },
+    {
+      "id": "caw-6",
+      "issue_number": 6,
+      "title": "Skill-to-project matching contract",
+      "repository": "Codex-Agent-Workshop",
+      "url": "https://github.com/Aggredicus/Codex-Agent-Workshop/issues/6",
+      "summary": "Design a transparent, versioned schema connecting skill evidence to public contribution opportunities.",
+      "skills": [
+        "python",
+        "graph",
+        "documentation",
+        "community"
+      ],
+      "level": "intermediate",
+      "kind": "architecture",
+      "status_at_verification": "open",
+      "labels": [
+        "help wanted"
+      ]
+    }
+  ]
+}

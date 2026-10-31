@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "contract_id": "caw.law.work-packet",
+  "contract_status": "proposal",
+  "description": "Portable proposal for CAW-to-LAW execution. This file carries requirements and path restrictions; it is not an authorization token. LAW never derives real GitHub privileges from the packet.",
+  "required": [
+    "schema_version",
+    "contract_id",
+    "task_id",
+    "repository",
+    "objective",
+    "risk",
+    "required_skills",
+    "allowed_paths",
+    "forbidden_paths",
+    "evidence_required",
+    "stop_conditions",
+    "requested_agent",
+    "governance"
+  ],
+  "fields": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "contract_id": {
+      "type": "string",
+      "const": "caw.law.work-packet"
+    },
+    "task_id": {
+      "type": "string",
+      "pattern": "^[A-Z0-9][A-Z0-9_-]{1,63}$"
+    },
+    "repository": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$",
+      "max_length": 130
+    },
+    "objective": {
+      "type": "string",
+      "min_length": 8,
+      "max_length": 1500
+    },
+    "risk": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "required_skills": {
+      "type": "array",
+      "items": {
+        "type": "skill-id"
+      },
+      "max_items": 50
+    },
+    "allowed_paths": {
+      "type": "array",
+      "items": {
+        "type": "repo-relative-path"
+      },
+      "max_items": 100
+    },
+    "forbidden_paths": {
+      "type": "array",
+      "items": {
+        "type": "repo-relative-path"
+      },
+      "max_items": 100
+    },
+    "evidence_required": {
+      "type": "array",
+      "items": {
+        "type": "short-text"
+      },
+      "max_items": 40
+    },
+    "stop_conditions": {
+      "type": "array",
+      "items": {
+        "type": "short-text"
+      },
+      "max_items": 40
+    },
+    "requested_agent": {
+      "type": "object",
+      "required": [
+        "runtime",
+        "origin_digest"
+      ],
+      "fields": {
+        "runtime": {
+          "type": "slug"
+        },
+        "origin_digest": {
+          "type": "sha256"
+        }
+      }
+    },
+    "governance": {
+      "type": "object",
+      "required": [
+        "approval_state",
+        "authority"
+      ],
+      "fields": {
+        "approval_state": {
+          "type": "string",
+          "enum": [
+            "proposal",
+            "needs-human-review"
+          ]
+        },
+        "authority": {
+          "type": "string",
+          "const": "github-verified-human-review"
+        }
+      }
+    }
+  },
+  "security": {
+    "untrusted_packet": true,
+    "default_network": "deny",
+    "default_write": "deny",
+    "self_grant_forbidden": true,
+    "no_credential_fields": true,
+    "no_runtime_authorization_claims": true
+  },
+  "change_control": "Edit only through reviewed CAW PR. LAW reads a locally supplied checked-out copy of this canonical file; the contract's contents cannot grant authority."
+}

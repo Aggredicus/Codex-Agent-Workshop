@@ -1,0 +1,52 @@
+name: "Offer open-source help"
+description: "Share public skill areas and request a small, maintainer-approved contribution. Do not include private information."
+title: "[Contributor interest] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you! This is a **public GitHub issue**. Never post email addresses, phone numbers, resumes, passwords, customer information, or other private data. This form is for community open-source contributions only, not employment or unpaid commercial work.
+  - type: checkboxes
+    id: skills
+    attributes:
+      label: Skills you would enjoy using
+      description: Choose any that apply. You can contribute without selecting a category.
+      options:
+        - label: Python
+        - label: JavaScript / browser development
+        - label: Automated testing and QA
+        - label: Security and GitHub Actions
+        - label: Accessibility / UX
+        - label: Documentation / community support
+        - label: GIS / scientific or graph modeling
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Preferred contribution size
+      options:
+        - "Not sure — help me find a first task"
+        - "Small: about 1–2 hours"
+        - "Medium: a few hours"
+        - "Larger: discuss a scoped milestone"
+    validations:
+      required: true
+  - type: input
+    id: project
+    attributes:
+      label: Project or issue (optional)
+      placeholder: "Codex Agent Workshop, ConsciOS, or a public issue URL"
+  - type: textarea
+    id: interest
+    attributes:
+      label: What would you enjoy contributing?
+      description: Public project interests only; no sensitive information.
+      placeholder: "A brief idea or the kind of task you would enjoy"
+    validations:
+      required: true
+  - type: checkboxes
+    id: expectations
+    attributes:
+      label: Expectations
+      options:
+        - label: "I understand that tasks require maintainer scoping and review; there is no guarantee of assignment or merge."
+          required: true

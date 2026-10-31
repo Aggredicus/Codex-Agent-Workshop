@@ -1,0 +1,59 @@
+name: "Request open-source coding help"
+description: "Ask whether our published software skills could help a public project; all offers are discretionary."
+title: "[Help request] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Public issue.** Post only public repository links and non-sensitive technical details. Never include credentials, customer data, personal contact details, or proprietary source. This form requests a discussion—not guaranteed free consulting, work, a schedule, or an agent execution.
+  - type: input
+    id: repository
+    attributes:
+      label: Public project URL
+      placeholder: "https://github.com/owner/repo"
+      description: "Share a repository or a public issue link. Private work needs a separately reviewed arrangement."
+    validations:
+      required: true
+  - type: dropdown
+    id: capability
+    attributes:
+      label: Type of support requested
+      options:
+        - "Agent orchestration / workflow design"
+        - "Python automation / testing"
+        - "Offline browser apps / accessibility"
+        - "Local development environments"
+        - "Graph / model visualization"
+        - "Ecological / GIS workflow tooling"
+        - "Other — describe below"
+    validations:
+      required: true
+  - type: textarea
+    id: challenge
+    attributes:
+      label: Problem and expected outcome
+      placeholder: "The project currently ... A useful result would be ..."
+    validations:
+      required: true
+  - type: textarea
+    id: boundaries
+    attributes:
+      label: Useful context and constraints
+      description: "Relevant public issues, existing tests, supported environments, license, and a small scoped first step."
+  - type: dropdown
+    id: arrangement
+    attributes:
+      label: Collaboration preference
+      options:
+        - "Open-source mutual assistance (no exchange commitment)"
+        - "Interested in discussing a reciprocal skill trade"
+        - "Seeking advice or a small review first"
+    validations:
+      required: true
+  - type: checkboxes
+    id: agreement
+    attributes:
+      label: Expectations
+      options:
+        - label: "I understand this is a public request for discussion; there is no promise to accept the task, provide a service, or meet a deadline."
+          required: true

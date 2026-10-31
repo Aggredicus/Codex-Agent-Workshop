@@ -85,6 +85,36 @@ memory/                           durable lessons and improvement proposals
 tests/                            mechanical guarantees
 ```
 
+## Community collaboration — contributor gateway (draft)
+
+The [Find Your Place gateway](docs/volunteer/index.html) provides three paths: volunteer for scoped open-source tasks, request possible help for another public project, or propose an independently reviewed reciprocal skill exchange.
+
+- [Contribution guidelines](CONTRIBUTING.md)
+- [Candidate contribution areas](docs/volunteer/index.html) and [potential assistance skills](docs/volunteer/offered-skills.json)
+- [Skill exchange policy and limitations](docs/volunteer/SKILL_EXCHANGE.md)
+- [Publication gates](docs/volunteer/OPERATIONS.md)
+
+This is a **review-stage proposal**. Help requests and trades are nonbinding; the assistance catalog is based on repository evidence, not verified personal qualifications or availability. The GitHub issue forms become usable after merge to the default branch, and a visitor-facing Pages/profile link requires separate publication and verification.
+
+## Shared skill inventory and local runtime
+
+CAW owns the canonical [skill taxonomy](skill-inventory/taxonomy.json), [governance policy proposals](skill-inventory/governance/policy.json), [public skill-inventory procedure](.agents/skills/skill-inventory/SKILL.md), and [CAW→LAW work-packet contract](contracts/caw-law-work-packet.v1.json).
+
+**LAW, not CAW, owns private SQLite node records, computer/agent runtime identity, version reassessment, and eventual sandbox enforcement.** See [LAW's runtime integration guide](https://github.com/Aggredicus/Local-Agent-Workshop/blob/agent/caw-law-runtime-split-v01/docs/CAW_LAW_INTEGRATION.md). Local skill assertions never grant repository privileges: GitHub's authenticated permissions and reviews remain authoritative. The two code changes are coordinated, review-stage PRs.
+
+## Exporting a proposed LAW work packet
+
+CAW's [canonical v1 contract](contracts/caw-law-work-packet.v1.json) and [example packet](contracts/fixtures/caw-law-work-packet.example.json) define the portable JSON sent to LAW. The work packet is a proposal, not a signed grant or execution authorization.
+
+In a local LAW checkout, run:
+
+```sh
+python scripts/work_packet.py validate --schema ../Codex-Agent-Workshop/contracts/caw-law-work-packet.v1.json --packet ../Codex-Agent-Workshop/contracts/fixtures/caw-law-work-packet.example.json
+python scripts/work_packet.py plan --schema ../Codex-Agent-Workshop/contracts/caw-law-work-packet.v1.json --packet ../Codex-Agent-Workshop/contracts/fixtures/caw-law-work-packet.example.json
+```
+
+The LAW plan always denies execution until a separately reviewed, enforceable sandbox exists. This is intentionally less powerful than deploying an unreviewed executor.
+
 ## Core commands
 
 ```text

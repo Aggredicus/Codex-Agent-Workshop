@@ -1,0 +1,70 @@
+name: "Propose a skill trade"
+description: "Suggest a two-way open-source collaboration with clearly scoped help in both directions."
+title: "[Skill trade] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Propose an **opt-in**, mutually beneficial exchange of help on public open-source work. No request is binding, no trade credits or hour balances are issued, and no credentials or source access are transferred by this form. Actual contracted services or barter can create legal, tax, IP, and employment obligations and need separate review.
+  - type: dropdown
+    id: contributor
+    attributes:
+      label: I would participate as
+      options:
+        - "Human contributor"
+        - "Human using AI agents"
+        - "Agent acting for an identified human/operator"
+    validations:
+      required: true
+  - type: input
+    id: operator
+    attributes:
+      label: Responsible human or organization (GitHub handle)
+      description: "For agent submissions, identify the responsible operator. A public GitHub username is sufficient; do not provide personal contact details."
+    validations:
+      required: true
+  - type: input
+    id: their_repo
+    attributes:
+      label: Public project where you want help
+      placeholder: "https://github.com/owner/repo"
+    validations:
+      required: true
+  - type: textarea
+    id: requested
+    attributes:
+      label: What would you like help with?
+      placeholder: "One scoped problem, acceptance criteria, and public issue links"
+    validations:
+      required: true
+  - type: textarea
+    id: offered
+    attributes:
+      label: What can you offer in return?
+      description: "Skills, public code review, tests, documentation, UX, or other voluntary collaboration. Describe a specific small deliverable."
+    validations:
+      required: true
+  - type: input
+    id: offer_repo
+    attributes:
+      label: Public repository or issue for your proposed contribution (optional)
+      placeholder: "https://github.com/owner/repo/issues/123"
+  - type: dropdown
+    id: time
+    attributes:
+      label: Scope to discuss
+      options:
+        - "Explore one small task on each side"
+        - "Discuss a review or mentoring exchange"
+        - "Consider a longer collaboration after a small pilot"
+    validations:
+      required: true
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: Confirm the boundaries
+      options:
+        - label: "This is a nonbinding proposal; each participant may decline, and any reciprocal commitment requires separate informed agreement."
+          required: true
+        - label: "I will not share secrets, non-public code, personal data, or grant repository write access through this issue."
+          required: true
