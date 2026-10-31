@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "contract_id": "caw.law.work-packet",
+  "task_id": "CAW-EXAMPLE-1",
+  "repository": "Aggredicus/Codex-Agent-Workshop",
+  "objective": "Review public contributor documentation and propose a bounded usability improvement",
+  "risk": "low",
+  "required_skills": [
+    "technical-writing",
+    "accessibility-testing"
+  ],
+  "allowed_paths": [
+    "docs/volunteer"
+  ],
+  "forbidden_paths": [
+    "private",
+    "secret"
+  ],
+  "evidence_required": [
+    "Verification steps with actual environment"
+  ],
+  "stop_conditions": [
+    "Unexpected private data required",
+    "Human approval required"
+  ],
+  "requested_agent": {
+    "runtime": "codex",
+    "origin_digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "governance": {
+    "approval_state": "proposal",
+    "authority": "github-verified-human-review"
+  }
+}
