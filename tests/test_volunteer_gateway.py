@@ -49,7 +49,7 @@ def test_matcher_is_client_only_and_has_accessible_controls():
 def test_offered_catalog_matches_offline_embedded_snapshot():
     html, _ = _load()
     match = re.search(
-        r'<script type="application/json" id="offered-catalog">\\s*(.*?)\\s*</script>',
+        r'<script type="application/json" id="offered-catalog">\s*(.*?)\s*</script>',
         html,
         re.S,
     )
