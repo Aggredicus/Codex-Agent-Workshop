@@ -96,11 +96,11 @@ The [Find Your Place gateway](docs/volunteer/index.html) provides three paths: v
 
 This is a **review-stage proposal**. Help requests and trades are nonbinding; the assistance catalog is based on repository evidence, not verified personal qualifications or availability. The GitHub issue forms become usable after merge to the default branch, and a visitor-facing Pages/profile link requires separate publication and verification.
 
-## Serverless skill and node registry
+## Shared skill inventory and local runtime
 
-The [serverless registry specification](skill-inventory/SERVERLESS_ARCHITECTURE.md) describes local SQLite for private human, computer and agent nodes (including origin/version reassessment) alongside Git-tracked JSON skill taxonomies. No custom server or paid database is required. GitHub remains the authenticated collaboration and PR-approval service; local skill assertions cannot grant merge or execution permissions.
+CAW owns the canonical [skill taxonomy](skill-inventory/taxonomy.json), [governance policy proposals](skill-inventory/governance/policy.json), [public skill-inventory procedure](.agents/skills/skill-inventory/SKILL.md), and [CAW→LAW work-packet contract](contracts/caw-law-work-packet.v1.json).
 
-Start with `python scripts/node_registry.py summary`; see the guide before enrolling an agent. The private database and WAL are intentionally untracked.
+**LAW, not CAW, owns private SQLite node records, computer/agent runtime identity, version reassessment, and eventual sandbox enforcement.** See [LAW's runtime integration guide](https://github.com/Aggredicus/Local-Agent-Workshop/blob/agent/caw-law-runtime-split-v01/docs/CAW_LAW_INTEGRATION.md). Local skill assertions never grant repository privileges: GitHub's authenticated permissions and reviews remain authoritative. The two code changes are coordinated, review-stage PRs.
 
 ## Core commands
 
