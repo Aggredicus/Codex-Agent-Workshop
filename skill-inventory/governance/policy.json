@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "revision": "v1-proposal",
+  "status": "proposed",
+  "default_decision": "deny",
+  "policy_authority": "approved-protected-default-branch-only",
+  "actions": [
+    "skill.discover",
+    "skill.execute",
+    "pr.propose",
+    "pr.review",
+    "pr.merge",
+    "policy.vote"
+  ],
+  "roles": {
+    "visitor": {
+      "allowed": [
+        "skill.discover"
+      ],
+      "skill_scopes": [
+        "*"
+      ],
+      "actor_kinds": [
+        "human",
+        "agent"
+      ]
+    },
+    "contributor": {
+      "allowed": [
+        "skill.discover",
+        "pr.propose"
+      ],
+      "skill_scopes": [
+        "*"
+      ],
+      "actor_kinds": [
+        "human",
+        "agent"
+      ]
+    },
+    "developer": {
+      "allowed": [
+        "skill.discover",
+        "skill.execute",
+        "pr.propose"
+      ],
+      "skill_scopes": [
+        "*"
+      ],
+      "actor_kinds": [
+        "human",
+        "agent"
+      ]
+    },
+    "reviewer": {
+      "allowed": [
+        "skill.discover",
+        "skill.execute",
+        "pr.propose",
+        "pr.review"
+      ],
+      "skill_scopes": [
+        "*"
+      ],
+      "actor_kinds": [
+        "human"
+      ]
+    },
+    "maintainer": {
+      "allowed": [
+        "skill.discover",
+        "skill.execute",
+        "pr.propose",
+        "pr.review",
+        "pr.merge",
+        "policy.vote"
+      ],
+      "skill_scopes": [
+        "*"
+      ],
+      "actor_kinds": [
+        "human"
+      ]
+    },
+    "review-agent": {
+      "allowed": [
+        "skill.discover",
+        "pr.propose"
+      ],
+      "skill_scopes": [
+        "*"
+      ],
+      "actor_kinds": [
+        "agent"
+      ]
+    }
+  },
+  "capability_overrides": {
+    "authorization": {
+      "human_approval_for": [
+        "skill.execute",
+        "pr.review",
+        "pr.merge"
+      ]
+    },
+    "authentication": {
+      "human_approval_for": [
+        "skill.execute",
+        "pr.review",
+        "pr.merge"
+      ]
+    },
+    "secrets-management": {
+      "human_approval_for": [
+        "skill.execute",
+        "pr.review",
+        "pr.merge"
+      ]
+    },
+    "deployment": {
+      "human_approval_for": [
+        "skill.execute",
+        "pr.merge"
+      ]
+    },
+    "privacy-engineering": {
+      "human_approval_for": [
+        "skill.execute",
+        "pr.merge"
+      ]
+    }
+  },
+  "voting": {
+    "purpose": "Approve proposed changes to role/skill policy, with auditable authenticated GitHub PR reviews",
+    "min_independent_human_approvals": 1,
+    "agent_votes_count": false,
+    "author_vote_counts": false,
+    "mechanism": "required-reviewer-and-protected-branch",
+    "fallback": "deny"
+  },
+  "non_enforcement_notice": "This public file is proposed policy documentation. Effective actor authorization must be verified by trusted GitHub identity, rulesets/CODEOWNERS and scoped credentials. A locally supplied --role is untrusted and can never grant repository write/merge rights."
+}
