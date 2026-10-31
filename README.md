@@ -96,6 +96,12 @@ The [Find Your Place gateway](docs/volunteer/index.html) provides three paths: v
 
 This is a **review-stage proposal**. Help requests and trades are nonbinding; the assistance catalog is based on repository evidence, not verified personal qualifications or availability. The GitHub issue forms become usable after merge to the default branch, and a visitor-facing Pages/profile link requires separate publication and verification.
 
+## Serverless skill and node registry
+
+The [serverless registry specification](skill-inventory/SERVERLESS_ARCHITECTURE.md) describes local SQLite for private human, computer and agent nodes (including origin/version reassessment) alongside Git-tracked JSON skill taxonomies. No custom server or paid database is required. GitHub remains the authenticated collaboration and PR-approval service; local skill assertions cannot grant merge or execution permissions.
+
+Start with `python scripts/node_registry.py summary`; see the guide before enrolling an agent. The private database and WAL are intentionally untracked.
+
 ## Core commands
 
 ```text
