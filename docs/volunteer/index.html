@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="dark">
-<meta name="description" content="Explore potential ways to contribute your software skills to the Aggredicus open-source portfolio.">
+<meta name="description" content="Offer coding help, request open-source development support, or explore reciprocal skill exchanges across Aggredicus projects.">
 <title>Find Your Place · Aggredicus Open Source</title>
 <style>
 :root{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color-scheme:dark;--bg:#090c12;--surface:#141b27;--edge:#303c4c;--ink:#f1f5fa;--muted:#afbdce;--highlight:#82d6b5}
@@ -37,8 +37,11 @@ footer{padding-top:2rem;padding-bottom:3rem;font-size:.9rem;color:var(--muted)}
 <header>
 <div class="eyebrow">Open-source collaboration · Aggredicus</div>
 <h1>Find your place.</h1>
-<p class="lead">Explore where your skills could help strengthen an ecosystem of independent, open-source software projects. Select skills below to see possible contribution areas, then agree on a small issue before writing code.</p>
+<p class="lead">Offer your skills, ask for help with your public open-source project, or propose a two-way skill exchange. Discover possible matches before agreeing on any scoped work.</p>
 <p><a href="https://github.com/Aggredicus">Visit the GitHub profile</a> · <a href="https://github.com/Aggredicus/Codex-Agent-Workshop">Codex Agent Workshop</a></p>
+<nav aria-label="Collaboration paths" class="panel">
+<strong>Choose a path:</strong> <a href="#skills-title">I want to contribute</a> · <a href="#request-title">I need coding help</a> · <a href="#trade-title">I want to trade skills</a>
+</nav>
 <div class="notice"><strong>Exploratory catalog — not open assignments.</strong> These are candidate areas of need, not confirmed vacant tasks or employment offers. Work begins only after a maintainer approves a specific issue.</div>
 </header>
 <main>
@@ -57,6 +60,18 @@ footer{padding-top:2rem;padding-bottom:3rem;font-size:.9rem;color:var(--muted)}
 <div id="results" class="results"></div>
 <noscript><p>JavaScript is required for the skill matcher, but you can browse <a href="https://github.com/Aggredicus?tab=repositories">all public repositories</a> directly.</p></noscript>
 </section>
+<section class="panel" id="exchange" aria-labelledby="request-title" style="margin-top:1.5rem">
+<h2 id="request-title">Need help with your own open-source project?</h2>
+<p>Explore software capabilities that may be available through our public code and skill libraries. These are <strong>potential collaboration areas, not guaranteed services or verified individual qualifications.</strong></p>
+<div id="offer-results" class="results"></div>
+<p><a href="https://github.com/Aggredicus/Codex-Agent-Workshop/issues/new?template=request-help.yml">Request coding help through a public GitHub issue</a> (form becomes available after merge).</p>
+</section>
+<section class="panel" aria-labelledby="trade-title">
+<h2 id="trade-title">Propose a reciprocal skill exchange</h2>
+<p>For example, you might contribute an accessibility test to one of these repositories while receiving assistance designing an agent workflow for your own public project. Scope each contribution separately, with independent review and no automatic obligation.</p>
+<p><a href="https://github.com/Aggredicus/Codex-Agent-Workshop/issues/new?template=skill-trade.yml">Propose a skill trade through a public GitHub issue</a> (form becomes available after merge).</p>
+<p class="muted">Agents must identify a responsible human/operator. No credits, time balances, credentials, private source code, or binding commitments are exchanged through this page. Commercial or taxable barter arrangements require separate review.</p>
+</section>
 <section class="panel" style="margin-top:1.5rem" aria-labelledby="how-title">
 <h2 id="how-title">How to get involved</h2>
 <p><strong>1.</strong> Explore a repository and read its README and license. <strong>2.</strong> Ask for a clearly scoped public issue (or choose an explicitly labeled <code>help wanted</code> issue). <strong>3.</strong> Agree on acceptance criteria, fork or branch as appropriate, and submit a pull request with evidence. <strong>4.</strong> A maintainer reviews, responds, and handles integration.</p>
@@ -64,7 +79,7 @@ footer{padding-top:2rem;padding-bottom:3rem;font-size:.9rem;color:var(--muted)}
 <p class="muted">Do not put emails, phone numbers, resumes, credentials, client data, or other sensitive details in public GitHub issues. This invitation covers voluntary contributions to genuinely open-source community projects, not unpaid positions serving commercial business operations.</p>
 </section>
 </main>
-<footer>Draft candidate catalog · Last researched October 31, 2026 · No analytics, third-party scripts, network requests, or storage. Follow each repository's actual license and contribution guidelines. <a href="https://github.com/Aggredicus/Codex-Agent-Workshop">Source and maintainer contact via GitHub</a>.</footer>
+<footer>Draft candidate catalogs · October 31, 2026 · Skill matches are descriptive, not qualifications or commitments. No analytics, third-party scripts, network requests, or storage. Follow each repository's license and contribution rules. <a href="https://github.com/Aggredicus/Codex-Agent-Workshop">Source and maintainer contact via GitHub</a>.</footer>
 <script type="application/json" id="catalog">
 {
   "version": 1,
@@ -220,6 +235,9 @@ footer{padding-top:2rem;padding-bottom:3rem;font-size:.9rem;color:var(--muted)}
   ]
 }
 </script>
+<script type="application/json" id="offered-catalog">
+{"schema_version":1,"as_of":"2026-10-31","publication_state":"proposed","disclaimer":"A catalog of repo-evidenced software and workflow capabilities potentially available for collaboration, not a verified résumé, guaranteed service, or claim of personal proficiency. All requests are reviewed by the maintainer.","offerings":[{"id":"agent-workflows","title":"AI agent team planning and workflow design","skills":["python","documentation","testing"],"evidence_repository":"https://github.com/Aggredicus/Codex-Agent-Workshop","sample_deliverables":["task contracts","role-routing review","reproducible tests"],"request_scope":"public-source"},{"id":"local-dev","title":"Local-first development workflows","skills":["linux","python","security"],"evidence_repository":"https://github.com/Aggredicus/Local-Agent-Workshop","sample_deliverables":["environment diagnostics","reproducibility review","local setup guidance"],"request_scope":"public-source"},{"id":"offline-web","title":"Offline browser app prototyping and QA","skills":["javascript","testing","ux","accessibility"],"evidence_repository":"https://github.com/Aggredicus/TAFL-Kings-Table-Browser-Game","sample_deliverables":["offline-app review","responsive interface testing","small demonstrator"],"request_scope":"public-source"},{"id":"science-graphs","title":"Inspectable models and software architecture visualization","skills":["graph","javascript","documentation"],"evidence_repository":"https://github.com/Aggredicus/ConsciOS","sample_deliverables":["architecture mapping","graph schema prototype","evidence inventory"],"request_scope":"public-source"},{"id":"eco-workflow","title":"Scientific and ecological workflow tooling","skills":["gis","python","documentation"],"evidence_repository":"https://github.com/Aggredicus/Permaculture-Agent-Dev-3","sample_deliverables":["reproducible example","validation procedure","data provenance checklist"],"request_scope":"public-source"}]}
+</script>
 <script>
 "use strict";
 (function(){
@@ -228,6 +246,18 @@ const grid=document.getElementById("skill-grid"), results=document.getElementByI
 const count=document.getElementById("result-count"), exp=document.getElementById("experience");
 const only=document.getElementById("only-matches"), reset=document.getElementById("reset");
 const names=Object.fromEntries(catalog.skills.map(s=>[s.id,s.label]));
+const offered=JSON.parse(document.getElementById("offered-catalog").textContent);
+const offerGrid=document.getElementById("offer-results");
+offered.offerings.forEach(o=>{
+ const card=document.createElement("article");card.className="card";
+ const heading=document.createElement("h3");heading.textContent=o.title;
+ const details=document.createElement("p");details.textContent="Potential first steps: "+o.sample_deliverables.join(", ")+".";
+ const tags=document.createElement("div");
+ o.skills.forEach(s=>{const tag=document.createElement("span");tag.className="tag";tag.textContent=names[s]||s;tags.append(tag);});
+ const evidence=document.createElement("a");evidence.href=o.evidence_repository;evidence.textContent="Explore evidence repository";
+ const request=document.createElement("a");request.href="https://github.com/Aggredicus/Codex-Agent-Workshop/issues/new?template=request-help.yml";request.textContent="Ask for help in this area";
+ card.append(heading,details,tags,evidence,request);offerGrid.append(card);
+});
 catalog.skills.forEach(s=>{
  const label=document.createElement("label");label.className="skill";
  const input=document.createElement("input");input.type="checkbox";input.value=s.id;input.name="skill";
