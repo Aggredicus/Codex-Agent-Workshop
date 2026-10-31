@@ -235,10 +235,10 @@ Improvement proposals must state evidence, hypothesis, change, expected benefit,
 - No attempt to simulate an entire corporation on every task.
 - No token optimization that lowers output quality below the configured eval bar.
 
-## Serverless local state and authority separation (experimental)
+## Local runtime interoperability and authority separation (experimental)
 
-Per-node capability assertions, agent origin/version history, and permission proposals use a private local SQLite database described in `skill-inventory/SERVERLESS_ARCHITECTURE.md`. Public skill taxonomies and policies remain version-controlled JSON. Each computer owns an independent database; GitHub Issues and protected PR workflows are the shared authenticated collaboration layer.
+CAW owns reusable skill taxonomy, work/role policy, and the single canonical `contracts/caw-law-work-packet.v1.json` definition. It expresses required skill IDs, execution boundaries, evidence and task intent **as proposals**.
 
-Local node IDs are pseudonymous and self-registered, not proof of identity. A changed agent origin or artifact digest invalidates pending local permission proposals and requires capability reassessment. SQLite entries never authorize GitHub merges, PR approvals, privileged tool execution or public deployment. Human approvals must be independently enforced through verified GitHub identity, branch protections, and scoped tokens.
+LAW owns physical-computer records, local agent-instance origins/versions, private SQLite inventory state and OS-level execution safety. See the [LAW integration guide](https://github.com/Aggredicus/Local-Agent-Workshop/blob/agent/caw-law-runtime-split-v01/docs/CAW_LAW_INTEGRATION.md). LAW consumes an explicitly supplied local copy of CAW's versioned JSON contract; CAW does not retain duplicate live local-registry code.
 
-This design requires no custom server but GitHub collaboration still requires network access. No multi-host shared WAL database, opaque self-granted permissions, or automatic public identity inventory is permitted.
+Neither a CAW work packet nor a locally declared agent identity is an authorization credential. Execution must be enforced separately by a trusted sandbox provider, and GitHub PR approvals by authenticated branch/review rules. Both changes require independent review and verified cross-repository tests before protected merge.
