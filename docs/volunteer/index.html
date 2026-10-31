@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="description" content="Explore potential ways to contribute your software skills to the Aggredicus open-source portfolio.">
+<title>Find Your Place · Aggredicus Open Source</title>
+<style>
+:root{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color-scheme:dark;--bg:#090c12;--surface:#141b27;--edge:#303c4c;--ink:#f1f5fa;--muted:#afbdce;--highlight:#82d6b5}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);line-height:1.55}
+main,header,footer{max-width:1020px;margin:auto;padding:1.1rem}
+a{color:#a6d3ff}a:focus-visible,input:focus-visible,select:focus-visible,button:focus-visible{outline:3px solid #f6cf78;outline-offset:4px}
+header{padding-top:3rem;padding-bottom:2rem}h1{font-size:clamp(2.1rem,6vw,3.8rem);line-height:1.12;margin:.4rem 0 1rem;letter-spacing:-.04em}
+h2{font-size:1.35rem;margin:0 0 1rem}p{margin:.5rem 0 1.1rem}.eyebrow{letter-spacing:.14em;font-size:.75rem;text-transform:uppercase;color:var(--highlight);font-weight:750}
+.lead{font-size:1.14rem;max-width:66ch;color:var(--muted)}.panel{background:var(--surface);border:1px solid var(--edge);padding:1.25rem;border-radius:16px;margin-bottom:1.2rem}
+.notice{border-left:4px solid var(--highlight);padding:.7rem 1rem;background:#12251f;border-radius:6px}.muted,small{color:var(--muted)}
+.skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:.55rem;margin-top:1rem}
+.skill{display:flex;align-items:center;gap:.5rem;background:#1d2836;padding:.7rem;border:1px solid var(--edge);border-radius:10px;cursor:pointer}
+.skill:has(input:checked){border-color:var(--highlight);background:#13332d}
+.skill input{accent-color:var(--highlight);width:1.1rem;height:1.1rem}
+.controls{display:flex;align-items:center;flex-wrap:wrap;gap:1rem;margin:1.2rem 0}
+select{color:var(--ink);background:#1d2836;border:1px solid var(--edge);border-radius:8px;padding:.5rem}
+.results{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,295px),1fr));gap:1rem}
+.card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--edge);border-radius:16px;padding:1.2rem;gap:.35rem}
+.card h3{font-size:1.18rem;margin:.2rem 0}.card p{margin:.2rem 0 .6rem}.card .repo{font-size:.85rem;color:var(--highlight)}
+.tag{display:inline-block;font-size:.8rem;border:1px solid var(--edge);border-radius:6px;padding:.12rem .45rem;margin:.13rem .16rem .13rem 0;color:var(--muted)}
+.tag.match{border-color:var(--highlight);color:var(--highlight)}
+.card a{margin-top:auto;padding-top:.65rem;font-weight:600}.sectionhead{display:flex;gap:1rem;justify-content:space-between;flex-wrap:wrap;align-items:baseline;margin:2rem 0 1rem}
+.status{font-weight:700;font-size:.78rem;color:#e9d18e}.card strong{font-size:.88rem}
+footer{padding-top:2rem;padding-bottom:3rem;font-size:.9rem;color:var(--muted)}
+@media(prefers-reduced-motion:no-preference){.card{transition:border-color .15s}.card:hover{border-color:#638a9f}}
+@media(max-width:520px){header{padding-top:1.6rem}.panel{padding:1rem}}
+</style>
+</head>
+<body>
+<header>
+<div class="eyebrow">Open-source collaboration · Aggredicus</div>
+<h1>Find your place.</h1>
+<p class="lead">Explore where your skills could help strengthen an ecosystem of independent, open-source software projects. Select skills below to see possible contribution areas, then agree on a small issue before writing code.</p>
+<p><a href="https://github.com/Aggredicus">Visit the GitHub profile</a> · <a href="https://github.com/Aggredicus/Codex-Agent-Workshop">Codex Agent Workshop</a></p>
+<div class="notice"><strong>Exploratory catalog — not open assignments.</strong> These are candidate areas of need, not confirmed vacant tasks or employment offers. Work begins only after a maintainer approves a specific issue.</div>
+</header>
+<main>
+<section class="panel" aria-labelledby="skills-title">
+<h2 id="skills-title">What can you contribute?</h2>
+<p class="muted">Choose as many as you like. Matching happens entirely in your browser; selections are not sent or stored.</p>
+<div id="skill-grid" class="skill-grid"></div>
+<div class="controls">
+<label for="experience">Experience <select id="experience"><option value="any">Any level</option><option value="beginner">Getting started</option><option value="intermediate">Comfortable contributing</option></select></label>
+<label class="skill"><input type="checkbox" id="only-matches"> Show matching areas only</label>
+<button id="reset" type="button">Clear selections</button>
+</div>
+</section>
+<section aria-labelledby="opportunities-title">
+<div class="sectionhead"><h2 id="opportunities-title">Contribution areas</h2><span id="result-count" role="status" aria-live="polite"></span></div>
+<div id="results" class="results"></div>
+<noscript><p>JavaScript is required for the skill matcher, but you can browse <a href="https://github.com/Aggredicus?tab=repositories">all public repositories</a> directly.</p></noscript>
+</section>
+<section class="panel" style="margin-top:1.5rem" aria-labelledby="how-title">
+<h2 id="how-title">How to get involved</h2>
+<p><strong>1.</strong> Explore a repository and read its README and license. <strong>2.</strong> Ask for a clearly scoped public issue (or choose an explicitly labeled <code>help wanted</code> issue). <strong>3.</strong> Agree on acceptance criteria, fork or branch as appropriate, and submit a pull request with evidence. <strong>4.</strong> A maintainer reviews, responds, and handles integration.</p>
+<p><a href="https://github.com/Aggredicus/Codex-Agent-Workshop/issues/new?template=volunteer-interest.yml">Introduce your skills through a public GitHub issue</a> (available only after this gateway's issue form is merged).</p>
+<p class="muted">Do not put emails, phone numbers, resumes, credentials, client data, or other sensitive details in public GitHub issues. This invitation covers voluntary contributions to genuinely open-source community projects, not unpaid positions serving commercial business operations.</p>
+</section>
+</main>
+<footer>Draft candidate catalog · Last researched October 31, 2026 · No analytics, third-party scripts, network requests, or storage. Follow each repository's actual license and contribution guidelines. <a href="https://github.com/Aggredicus/Codex-Agent-Workshop">Source and maintainer contact via GitHub</a>.</footer>
+<script type="application/json" id="catalog">
+{
+  "version": 1,
+  "as_of": "2026-10-31",
+  "publication_state": "draft",
+  "skills": [
+    {
+      "id": "python",
+      "label": "Python"
+    },
+    {
+      "id": "javascript",
+      "label": "JavaScript"
+    },
+    {
+      "id": "github-actions",
+      "label": "GitHub Actions"
+    },
+    {
+      "id": "testing",
+      "label": "Automated testing"
+    },
+    {
+      "id": "security",
+      "label": "Security review"
+    },
+    {
+      "id": "accessibility",
+      "label": "Accessibility"
+    },
+    {
+      "id": "ux",
+      "label": "UX and interface design"
+    },
+    {
+      "id": "documentation",
+      "label": "Documentation"
+    },
+    {
+      "id": "graph",
+      "label": "Graphs and modeling"
+    },
+    {
+      "id": "gis",
+      "label": "Geospatial / GIS"
+    },
+    {
+      "id": "linux",
+      "label": "Linux / infrastructure"
+    },
+    {
+      "id": "community",
+      "label": "Community coordination"
+    }
+  ],
+  "opportunities": [
+    {
+      "id": "caw-governance",
+      "title": "Human–AI collaboration contracts",
+      "repo": "Codex-Agent-Workshop",
+      "url": "https://github.com/Aggredicus/Codex-Agent-Workshop",
+      "summary": "Help make tasks, approvals, handoffs, and decisions understandable to both human contributors and coding agents.",
+      "skills": [
+        "python",
+        "documentation",
+        "testing",
+        "github-actions"
+      ],
+      "level": "intermediate",
+      "scope": "Propose a schema, small validator, or corresponding tests; agree on a scoped issue first.",
+      "status": "candidate"
+    },
+    {
+      "id": "caw-evaluations",
+      "title": "Agent-workflow regression tests",
+      "repo": "Codex-Agent-Workshop",
+      "url": "https://github.com/Aggredicus/Codex-Agent-Workshop",
+      "summary": "Develop representative test cases that can show whether team planning and delegation have improved.",
+      "skills": [
+        "python",
+        "testing",
+        "security"
+      ],
+      "level": "intermediate",
+      "scope": "One deterministic fixture and one documented acceptance test.",
+      "status": "candidate"
+    },
+    {
+      "id": "conscios-topology",
+      "title": "Development-landscape usability",
+      "repo": "ConsciOS",
+      "url": "https://github.com/Aggredicus/ConsciOS",
+      "summary": "Help contributors navigate repository relationships, visualize architecture, and distinguish observed facts from hypotheses.",
+      "skills": [
+        "javascript",
+        "graph",
+        "ux",
+        "testing"
+      ],
+      "level": "intermediate",
+      "scope": "A narrow visual or accessibility improvement with reproducible verification.",
+      "status": "candidate"
+    },
+    {
+      "id": "tafl-qa",
+      "title": "Offline mobile game accessibility",
+      "repo": "TAFL-Kings-Table-Browser-Game",
+      "url": "https://github.com/Aggredicus/TAFL-Kings-Table-Browser-Game",
+      "summary": "Evaluate keyboard, touch, screen-reader, small-screen, and offline usability of the browser game.",
+      "skills": [
+        "javascript",
+        "accessibility",
+        "testing",
+        "ux"
+      ],
+      "level": "beginner",
+      "scope": "A reproducible report or targeted regression fix with device/browser notes.",
+      "status": "candidate"
+    },
+    {
+      "id": "permaculture-skills",
+      "title": "Reproducible ecological analysis",
+      "repo": "Permaculture-Agent-Dev-3",
+      "url": "https://github.com/Aggredicus/Permaculture-Agent-Dev-3",
+      "summary": "Improve verification, provenance, and examples for terrain and landscape-analysis skills.",
+      "skills": [
+        "gis",
+        "python",
+        "documentation",
+        "testing"
+      ],
+      "level": "intermediate",
+      "scope": "Improve a public example or verify an existing analysis workflow.",
+      "status": "candidate"
+    },
+    {
+      "id": "local-workshop",
+      "title": "Local-first development reliability",
+      "repo": "Local-Agent-Workshop",
+      "url": "https://github.com/Aggredicus/Local-Agent-Workshop",
+      "summary": "Help test reproducible local setup, CI hardening, diagnostics, and developer onboarding.",
+      "skills": [
+        "linux",
+        "github-actions",
+        "python",
+        "security",
+        "documentation"
+      ],
+      "level": "intermediate",
+      "scope": "A small, reviewable documentation, CI, or reproducibility improvement.",
+      "status": "candidate"
+    }
+  ]
+}
+</script>
+<script>
+"use strict";
+(function(){
+const catalog=JSON.parse(document.getElementById("catalog").textContent);
+const grid=document.getElementById("skill-grid"), results=document.getElementById("results");
+const count=document.getElementById("result-count"), exp=document.getElementById("experience");
+const only=document.getElementById("only-matches"), reset=document.getElementById("reset");
+const names=Object.fromEntries(catalog.skills.map(s=>[s.id,s.label]));
+catalog.skills.forEach(s=>{
+ const label=document.createElement("label");label.className="skill";
+ const input=document.createElement("input");input.type="checkbox";input.value=s.id;input.name="skill";
+ input.addEventListener("change",render);
+ const txt=document.createElement("span");txt.textContent=s.label;
+ label.append(input,txt);grid.append(label);
+});
+function selected(){return new Set([...grid.querySelectorAll("input:checked")].map(x=>x.value));}
+function render(){
+ const picks=selected(), level=exp.value;
+ let items=catalog.opportunities.map(o=>{
+  const hits=o.skills.filter(s=>picks.has(s));
+  return {o,hits,score:hits.length};
+ });
+ if(level!=="any")items=items.filter(x=>level==="intermediate"||x.o.level==="beginner");
+ if(only.checked&&picks.size)items=items.filter(x=>x.score>0);
+ items.sort((a,b)=>b.score-a.score||a.o.title.localeCompare(b.o.title));
+ results.replaceChildren();
+ items.forEach(({o,hits,score})=>{
+  const article=document.createElement("article");article.className="card";
+  const repo=document.createElement("div");repo.className="repo";repo.textContent=o.repo;
+  const title=document.createElement("h3");title.textContent=o.title;
+  const status=document.createElement("div");status.className="status";status.textContent="Proposed area · Not yet assigned";
+  const description=document.createElement("p");description.textContent=o.summary;
+  const scope=document.createElement("p");const strong=document.createElement("strong");strong.textContent="Possible first step: ";scope.append(strong,document.createTextNode(o.scope));
+  const tags=document.createElement("div");
+  o.skills.forEach(s=>{const tag=document.createElement("span");tag.className="tag"+(picks.has(s)?" match":"");tag.textContent=names[s];tags.append(tag);});
+  const link=document.createElement("a");link.href=o.url;link.textContent="Explore repository";link.rel="noopener noreferrer";
+  article.append(repo,title,status,description,scope,tags,link);
+  if(picks.size){const fit=document.createElement("small");fit.textContent=score+" of "+o.skills.length+" listed skills matched";article.insertBefore(fit,status);}
+  results.append(article);
+ });
+ count.textContent=items.length+" candidate area"+(items.length===1?"":"s")+" shown";
+}
+exp.addEventListener("change",render);only.addEventListener("change",render);
+reset.addEventListener("click",()=>{grid.querySelectorAll("input").forEach(x=>x.checked=false);exp.value="any";only.checked=false;render();});
+render();
+})();
+</script>
+</body>
+</html>
