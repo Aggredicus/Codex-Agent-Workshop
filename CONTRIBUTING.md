@@ -17,3 +17,11 @@ Thanks for considering a contribution to the **open-source software**. Small, we
 - Use GitHub public comments for project coordination, not sensitive information. Never post API keys or contact details in public issues.
 
 Contributing does not imply employment, payment, exclusivity, or automatic commit rights. Do not interpret this repository as requesting unpaid work for a for-profit business. Business/client work requires a separately reviewed legal and commercial arrangement. No contributor is required to share a résumé, legal name, or private contact information to propose a public-source contribution.
+
+## Request help on another project
+
+If your public open-source project could benefit from the techniques or tools documented in this portfolio, use the [coding help request form](https://github.com/Aggredicus/Codex-Agent-Workshop/issues/new?template=request-help.yml) to propose a small, testable task. The [candidate assistance inventory](docs/volunteer/offered-skills.json) is based on project evidence; it is not a résumé, guarantee of proficiency, promise of availability, or commitment to perform work.
+
+## Propose a skill exchange
+
+Use the [skill trade proposal form](https://github.com/Aggredicus/Codex-Agent-Workshop/issues/new?template=skill-trade.yml) to suggest independently scoped help in two public projects. Every project owner separately approves their work, and no issue submission establishes a binding reciprocal obligation, credit balance, paid arrangement, or access to confidential materials. For boundaries and triage, consult [SKILL_EXCHANGE.md](docs/volunteer/SKILL_EXCHANGE.md).
