@@ -102,6 +102,19 @@ CAW owns the canonical [skill taxonomy](skill-inventory/taxonomy.json), [governa
 
 **LAW, not CAW, owns private SQLite node records, computer/agent runtime identity, version reassessment, and eventual sandbox enforcement.** See [LAW's runtime integration guide](https://github.com/Aggredicus/Local-Agent-Workshop/blob/agent/caw-law-runtime-split-v01/docs/CAW_LAW_INTEGRATION.md). Local skill assertions never grant repository privileges: GitHub's authenticated permissions and reviews remain authoritative. The two code changes are coordinated, review-stage PRs.
 
+## Exporting a proposed LAW work packet
+
+CAW's [canonical v1 contract](contracts/caw-law-work-packet.v1.json) and [example packet](contracts/fixtures/caw-law-work-packet.example.json) define the portable JSON sent to LAW. The work packet is a proposal, not a signed grant or execution authorization.
+
+In a local LAW checkout, run:
+
+```sh
+python scripts/work_packet.py validate --schema ../Codex-Agent-Workshop/contracts/caw-law-work-packet.v1.json --packet ../Codex-Agent-Workshop/contracts/fixtures/caw-law-work-packet.example.json
+python scripts/work_packet.py plan --schema ../Codex-Agent-Workshop/contracts/caw-law-work-packet.v1.json --packet ../Codex-Agent-Workshop/contracts/fixtures/caw-law-work-packet.example.json
+```
+
+The LAW plan always denies execution until a separately reviewed, enforceable sandbox exists. This is intentionally less powerful than deploying an unreviewed executor.
+
 ## Core commands
 
 ```text
