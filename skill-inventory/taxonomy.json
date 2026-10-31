@@ -424,6 +424,12 @@
       "scientific-validation",
       "geodata-provenance",
       "requirements-engineering"
+    ],
+    "skill-inventory": [
+      "agent-skills",
+      "data-modeling",
+      "human-agent-governance",
+      "privacy-engineering"
     ]
   },
   "safety": {
