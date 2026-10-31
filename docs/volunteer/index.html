@@ -42,9 +42,20 @@ footer{padding-top:2rem;padding-bottom:3rem;font-size:.9rem;color:var(--muted)}
 <nav aria-label="Collaboration paths" class="panel">
 <strong>Choose a path:</strong> <a href="#skills-title">I want to contribute</a> · <a href="#request-title">I need coding help</a> · <a href="#trade-title">I want to trade skills</a>
 </nav>
-<div class="notice"><strong>Exploratory catalog — not open assignments.</strong> These are candidate areas of need, not confirmed vacant tasks or employment offers. Work begins only after a maintainer approves a specific issue.</div>
+<div class="notice"><strong>Three starter GitHub issues are available to explore.</strong> Status was checked October 31, 2026. Always check the linked issue for live status and confirm scope with a maintainer before beginning. Other project ideas below are suggestions, not open assignments.</div>
 </header>
 <main>
+<section class="panel" aria-labelledby="current-tasks-title">
+<div class="sectionhead"><h2 id="current-tasks-title">Verified starter issues</h2><span class="muted">Last checked: October 31, 2026</span></div>
+<p>These are real, scoped GitHub issues with acceptance criteria. GitHub remains the source of truth: review the current status and ask the maintainer before claiming one.</p>
+<div id="active-tasks" class="results"></div>
+<noscript><ul>
+<li><a href="https://github.com/Aggredicus/Codex-Agent-Workshop/issues/4">Accessibility and mobile usability testing</a></li>
+<li><a href="https://github.com/Aggredicus/Codex-Agent-Workshop/issues/5">Additional deterministic matcher tests</a></li>
+<li><a href="https://github.com/Aggredicus/Codex-Agent-Workshop/issues/6">Explainable skill-to-project matching contracts</a></li>
+</ul></noscript>
+<p><a href="https://github.com/Aggredicus/Codex-Agent-Workshop/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22help%20wanted%22">See currently open help-wanted issues on GitHub</a></p>
+</section>
 <section class="panel" aria-labelledby="skills-title">
 <h2 id="skills-title">What can you contribute?</h2>
 <p class="muted">Choose as many as you like. Matching happens entirely in your browser; selections are not sent or stored.</p>
@@ -56,7 +67,7 @@ footer{padding-top:2rem;padding-bottom:3rem;font-size:.9rem;color:var(--muted)}
 </div>
 </section>
 <section aria-labelledby="opportunities-title">
-<div class="sectionhead"><h2 id="opportunities-title">Contribution areas</h2><span id="result-count" role="status" aria-live="polite"></span></div>
+<div class="sectionhead"><h2 id="opportunities-title">Other areas to explore</h2><span id="result-count" role="status" aria-live="polite"></span></div>
 <div id="results" class="results"></div>
 <noscript><p>JavaScript is required for the skill matcher, but you can browse <a href="https://github.com/Aggredicus?tab=repositories">all public repositories</a> directly.</p></noscript>
 </section>
@@ -79,7 +90,10 @@ footer{padding-top:2rem;padding-bottom:3rem;font-size:.9rem;color:var(--muted)}
 <p class="muted">Do not put emails, phone numbers, resumes, credentials, client data, or other sensitive details in public GitHub issues. This invitation covers voluntary contributions to genuinely open-source community projects, not unpaid positions serving commercial business operations.</p>
 </section>
 </main>
-<footer>Draft candidate catalogs · October 31, 2026 · Skill matches are descriptive, not qualifications or commitments. No analytics, third-party scripts, network requests, or storage. Follow each repository's license and contribution rules. <a href="https://github.com/Aggredicus/Codex-Agent-Workshop">Source and maintainer contact via GitHub</a>.</footer>
+<footer>Three verified issue snapshots and proposed skill catalogs · October 31, 2026 · Skill matches are descriptive, not qualifications or commitments. No analytics, third-party scripts, network requests, or storage. Follow each repository's license and contribution rules. <a href="https://github.com/Aggredicus/Codex-Agent-Workshop">Source and maintainer contact via GitHub</a>.</footer>
+<script type="application/json" id="verified-tasks">
+{"schema_version":1,"verified_at":"2026-10-31","sync_policy":"Snapshot only. Before starting, open the linked GitHub issue to verify it is still open and unassigned; its GitHub status is authoritative.","tasks":[{"id":"caw-4","issue_number":4,"title":"Mobile and accessibility testing","repository":"Codex-Agent-Workshop","url":"https://github.com/Aggredicus/Codex-Agent-Workshop/issues/4","summary":"Run documented keyboard, mobile and assistive-technology checks; contribute verified findings and reproducible defects.","skills":["accessibility","testing","ux","documentation"],"level":"beginner","kind":"quality assurance","status_at_verification":"open","labels":["help wanted","good first issue"]},{"id":"caw-5","issue_number":5,"title":"Expand matcher regression tests","repository":"Codex-Agent-Workshop","url":"https://github.com/Aggredicus/Codex-Agent-Workshop/issues/5","summary":"Add focused reproducible tests for catalog constraints, request forms and optional browser behavior.","skills":["python","testing","github-actions","security"],"level":"intermediate","kind":"test engineering","status_at_verification":"open","labels":["help wanted"]},{"id":"caw-6","issue_number":6,"title":"Skill-to-project matching contract","repository":"Codex-Agent-Workshop","url":"https://github.com/Aggredicus/Codex-Agent-Workshop/issues/6","summary":"Design a transparent, versioned schema connecting skill evidence to public contribution opportunities.","skills":["python","graph","documentation","community"],"level":"intermediate","kind":"architecture","status_at_verification":"open","labels":["help wanted"]}]}
+</script>
 <script type="application/json" id="catalog">
 {
   "version": 1,
@@ -242,10 +256,22 @@ footer{padding-top:2rem;padding-bottom:3rem;font-size:.9rem;color:var(--muted)}
 "use strict";
 (function(){
 const catalog=JSON.parse(document.getElementById("catalog").textContent);
+const verified=JSON.parse(document.getElementById("verified-tasks").textContent);
 const grid=document.getElementById("skill-grid"), results=document.getElementById("results");
 const count=document.getElementById("result-count"), exp=document.getElementById("experience");
 const only=document.getElementById("only-matches"), reset=document.getElementById("reset");
 const names=Object.fromEntries(catalog.skills.map(s=>[s.id,s.label]));
+const liveGrid=document.getElementById("active-tasks");
+verified.tasks.forEach(o=>{
+ const card=document.createElement("article");card.className="card";
+ const eyebrow=document.createElement("div");eyebrow.className="repo";eyebrow.textContent=o.repository+" · #"+o.issue_number;
+ const title=document.createElement("h3");title.textContent=o.title;
+ const status=document.createElement("div");status.className="status";status.textContent="Open at last check · Confirm live status";
+ const details=document.createElement("p");details.textContent=o.summary;
+ const tags=document.createElement("div");o.skills.forEach(s=>{const tag=document.createElement("span");tag.className="tag";tag.textContent=names[s]||s;tags.append(tag);});
+ const link=document.createElement("a");link.href=o.url;link.rel="noopener noreferrer";link.textContent="Review issue and volunteer";
+ card.append(eyebrow,title,status,details,tags,link);liveGrid.append(card);
+});
 const offered=JSON.parse(document.getElementById("offered-catalog").textContent);
 const offerGrid=document.getElementById("offer-results");
 offered.offerings.forEach(o=>{
