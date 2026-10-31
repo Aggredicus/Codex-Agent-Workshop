@@ -29,10 +29,12 @@
     },
     {
       "category": "engineering",
-      "evidence_status": "not-observed",
+      "evidence_status": "documented-in-repository",
       "id": "data-modeling",
       "label": "Data Modeling",
-      "repository_skill_ids": [],
+      "repository_skill_ids": [
+        "skill-inventory"
+      ],
       "team_role_references": 0
     },
     {
@@ -271,10 +273,12 @@
     },
     {
       "category": "security",
-      "evidence_status": "not-observed",
+      "evidence_status": "documented-in-repository",
       "id": "privacy-engineering",
       "label": "Privacy Engineering",
-      "repository_skill_ids": [],
+      "repository_skill_ids": [
+        "skill-inventory"
+      ],
       "team_role_references": 0
     },
     {
@@ -393,10 +397,12 @@
     },
     {
       "category": "agentic",
-      "evidence_status": "not-observed",
+      "evidence_status": "documented-in-repository",
       "id": "agent-skills",
       "label": "Agent Skills",
-      "repository_skill_ids": [],
+      "repository_skill_ids": [
+        "skill-inventory"
+      ],
       "team_role_references": 0
     },
     {
@@ -427,6 +433,7 @@
       "label": "Human Agent Governance",
       "repository_skill_ids": [
         "orchestrate-team",
+        "skill-inventory",
         "team-council"
       ],
       "team_role_references": 12
@@ -669,6 +676,7 @@
     "orchestrate-team",
     "permaculture-client-delivery",
     "run-business-cycle",
+    "skill-inventory",
     "team-council"
   ],
   "schema_version": 1,
