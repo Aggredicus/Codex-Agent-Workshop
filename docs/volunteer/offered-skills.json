@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-31",
+  "publication_state": "proposed",
+  "disclaimer": "A catalog of repo-evidenced software and workflow capabilities potentially available for collaboration, not a verified résumé, guaranteed service, or claim of personal proficiency. All requests are reviewed by the maintainer.",
+  "offerings": [
+    {
+      "id": "agent-workflows",
+      "title": "AI agent team planning and workflow design",
+      "skills": [
+        "python",
+        "documentation",
+        "testing"
+      ],
+      "evidence_repository": "https://github.com/Aggredicus/Codex-Agent-Workshop",
+      "sample_deliverables": [
+        "task contracts",
+        "role-routing review",
+        "reproducible tests"
+      ],
+      "request_scope": "public-source"
+    },
+    {
+      "id": "local-dev",
+      "title": "Local-first development workflows",
+      "skills": [
+        "linux",
+        "python",
+        "security"
+      ],
+      "evidence_repository": "https://github.com/Aggredicus/Local-Agent-Workshop",
+      "sample_deliverables": [
+        "environment diagnostics",
+        "reproducibility review",
+        "local setup guidance"
+      ],
+      "request_scope": "public-source"
+    },
+    {
+      "id": "offline-web",
+      "title": "Offline browser app prototyping and QA",
+      "skills": [
+        "javascript",
+        "testing",
+        "ux",
+        "accessibility"
+      ],
+      "evidence_repository": "https://github.com/Aggredicus/TAFL-Kings-Table-Browser-Game",
+      "sample_deliverables": [
+        "offline-app review",
+        "responsive interface testing",
+        "small demonstrator"
+      ],
+      "request_scope": "public-source"
+    },
+    {
+      "id": "science-graphs",
+      "title": "Inspectable models and software architecture visualization",
+      "skills": [
+        "graph",
+        "javascript",
+        "documentation"
+      ],
+      "evidence_repository": "https://github.com/Aggredicus/ConsciOS",
+      "sample_deliverables": [
+        "architecture mapping",
+        "graph schema prototype",
+        "evidence inventory"
+      ],
+      "request_scope": "public-source"
+    },
+    {
+      "id": "eco-workflow",
+      "title": "Scientific and ecological workflow tooling",
+      "skills": [
+        "gis",
+        "python",
+        "documentation"
+      ],
+      "evidence_repository": "https://github.com/Aggredicus/Permaculture-Agent-Dev-3",
+      "sample_deliverables": [
+        "reproducible example",
+        "validation procedure",
+        "data provenance checklist"
+      ],
+      "request_scope": "public-source"
+    }
+  ]
+}
