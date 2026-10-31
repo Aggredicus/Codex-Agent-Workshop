@@ -234,3 +234,11 @@ Improvement proposals must state evidence, hypothesis, change, expected benefit,
 - No requirement for native subagents.
 - No attempt to simulate an entire corporation on every task.
 - No token optimization that lowers output quality below the configured eval bar.
+
+## Serverless local state and authority separation (experimental)
+
+Per-node capability assertions, agent origin/version history, and permission proposals use a private local SQLite database described in `skill-inventory/SERVERLESS_ARCHITECTURE.md`. Public skill taxonomies and policies remain version-controlled JSON. Each computer owns an independent database; GitHub Issues and protected PR workflows are the shared authenticated collaboration layer.
+
+Local node IDs are pseudonymous and self-registered, not proof of identity. A changed agent origin or artifact digest invalidates pending local permission proposals and requires capability reassessment. SQLite entries never authorize GitHub merges, PR approvals, privileged tool execution or public deployment. Human approvals must be independently enforced through verified GitHub identity, branch protections, and scoped tokens.
+
+This design requires no custom server but GitHub collaboration still requires network access. No multi-host shared WAL database, opaque self-granted permissions, or automatic public identity inventory is permitted.
