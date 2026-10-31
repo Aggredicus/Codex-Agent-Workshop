@@ -1,0 +1,153 @@
+{
+  "version": 1,
+  "as_of": "2026-10-31",
+  "publication_state": "draft",
+  "skills": [
+    {
+      "id": "python",
+      "label": "Python"
+    },
+    {
+      "id": "javascript",
+      "label": "JavaScript"
+    },
+    {
+      "id": "github-actions",
+      "label": "GitHub Actions"
+    },
+    {
+      "id": "testing",
+      "label": "Automated testing"
+    },
+    {
+      "id": "security",
+      "label": "Security review"
+    },
+    {
+      "id": "accessibility",
+      "label": "Accessibility"
+    },
+    {
+      "id": "ux",
+      "label": "UX and interface design"
+    },
+    {
+      "id": "documentation",
+      "label": "Documentation"
+    },
+    {
+      "id": "graph",
+      "label": "Graphs and modeling"
+    },
+    {
+      "id": "gis",
+      "label": "Geospatial / GIS"
+    },
+    {
+      "id": "linux",
+      "label": "Linux / infrastructure"
+    },
+    {
+      "id": "community",
+      "label": "Community coordination"
+    }
+  ],
+  "opportunities": [
+    {
+      "id": "caw-governance",
+      "title": "Human–AI collaboration contracts",
+      "repo": "Codex-Agent-Workshop",
+      "url": "https://github.com/Aggredicus/Codex-Agent-Workshop",
+      "summary": "Help make tasks, approvals, handoffs, and decisions understandable to both human contributors and coding agents.",
+      "skills": [
+        "python",
+        "documentation",
+        "testing",
+        "github-actions"
+      ],
+      "level": "intermediate",
+      "scope": "Propose a schema, small validator, or corresponding tests; agree on a scoped issue first.",
+      "status": "candidate"
+    },
+    {
+      "id": "caw-evaluations",
+      "title": "Agent-workflow regression tests",
+      "repo": "Codex-Agent-Workshop",
+      "url": "https://github.com/Aggredicus/Codex-Agent-Workshop",
+      "summary": "Develop representative test cases that can show whether team planning and delegation have improved.",
+      "skills": [
+        "python",
+        "testing",
+        "security"
+      ],
+      "level": "intermediate",
+      "scope": "One deterministic fixture and one documented acceptance test.",
+      "status": "candidate"
+    },
+    {
+      "id": "conscios-topology",
+      "title": "Development-landscape usability",
+      "repo": "ConsciOS",
+      "url": "https://github.com/Aggredicus/ConsciOS",
+      "summary": "Help contributors navigate repository relationships, visualize architecture, and distinguish observed facts from hypotheses.",
+      "skills": [
+        "javascript",
+        "graph",
+        "ux",
+        "testing"
+      ],
+      "level": "intermediate",
+      "scope": "A narrow visual or accessibility improvement with reproducible verification.",
+      "status": "candidate"
+    },
+    {
+      "id": "tafl-qa",
+      "title": "Offline mobile game accessibility",
+      "repo": "TAFL-Kings-Table-Browser-Game",
+      "url": "https://github.com/Aggredicus/TAFL-Kings-Table-Browser-Game",
+      "summary": "Evaluate keyboard, touch, screen-reader, small-screen, and offline usability of the browser game.",
+      "skills": [
+        "javascript",
+        "accessibility",
+        "testing",
+        "ux"
+      ],
+      "level": "beginner",
+      "scope": "A reproducible report or targeted regression fix with device/browser notes.",
+      "status": "candidate"
+    },
+    {
+      "id": "permaculture-skills",
+      "title": "Reproducible ecological analysis",
+      "repo": "Permaculture-Agent-Dev-3",
+      "url": "https://github.com/Aggredicus/Permaculture-Agent-Dev-3",
+      "summary": "Improve verification, provenance, and examples for terrain and landscape-analysis skills.",
+      "skills": [
+        "gis",
+        "python",
+        "documentation",
+        "testing"
+      ],
+      "level": "intermediate",
+      "scope": "Improve a public example or verify an existing analysis workflow.",
+      "status": "candidate"
+    },
+    {
+      "id": "local-workshop",
+      "title": "Local-first development reliability",
+      "repo": "Local-Agent-Workshop",
+      "url": "https://github.com/Aggredicus/Local-Agent-Workshop",
+      "summary": "Help test reproducible local setup, CI hardening, diagnostics, and developer onboarding.",
+      "skills": [
+        "linux",
+        "github-actions",
+        "python",
+        "security",
+        "documentation"
+      ],
+      "level": "intermediate",
+      "scope": "A small, reviewable documentation, CI, or reproducibility improvement.",
+      "status": "candidate"
+    }
+  ]
+}
