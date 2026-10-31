@@ -1,0 +1,681 @@
+{
+  "capabilities": [
+    {
+      "category": "engineering",
+      "evidence_status": "documented-in-repository",
+      "id": "requirements-engineering",
+      "label": "Requirements Engineering",
+      "repository_skill_ids": [
+        "permaculture-client-delivery",
+        "run-business-cycle"
+      ],
+      "team_role_references": 23
+    },
+    {
+      "category": "engineering",
+      "evidence_status": "not-observed",
+      "id": "software-architecture",
+      "label": "Software Architecture",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "engineering",
+      "evidence_status": "not-observed",
+      "id": "api-design",
+      "label": "Api Design",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "engineering",
+      "evidence_status": "not-observed",
+      "id": "data-modeling",
+      "label": "Data Modeling",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "engineering",
+      "evidence_status": "not-observed",
+      "id": "python",
+      "label": "Python",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "engineering",
+      "evidence_status": "not-observed",
+      "id": "javascript",
+      "label": "Javascript",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "engineering",
+      "evidence_status": "not-observed",
+      "id": "typescript",
+      "label": "Typescript",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "engineering",
+      "evidence_status": "not-observed",
+      "id": "html-css",
+      "label": "Html Css",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "engineering",
+      "evidence_status": "not-observed",
+      "id": "rust",
+      "label": "Rust",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "engineering",
+      "evidence_status": "not-observed",
+      "id": "go",
+      "label": "Go",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "engineering",
+      "evidence_status": "not-observed",
+      "id": "shell",
+      "label": "Shell",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "engineering",
+      "evidence_status": "not-observed",
+      "id": "sql",
+      "label": "Sql",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "engineering",
+      "evidence_status": "not-observed",
+      "id": "algorithms",
+      "label": "Algorithms",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "engineering",
+      "evidence_status": "not-observed",
+      "id": "performance-engineering",
+      "label": "Performance Engineering",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "engineering",
+      "evidence_status": "not-observed",
+      "id": "refactoring",
+      "label": "Refactoring",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "engineering",
+      "evidence_status": "not-observed",
+      "id": "code-review",
+      "label": "Code Review",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "testing",
+      "evidence_status": "not-observed",
+      "id": "unit-testing",
+      "label": "Unit Testing",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "testing",
+      "evidence_status": "not-observed",
+      "id": "integration-testing",
+      "label": "Integration Testing",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "testing",
+      "evidence_status": "not-observed",
+      "id": "end-to-end-testing",
+      "label": "End To End Testing",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "testing",
+      "evidence_status": "documented-in-repository",
+      "id": "regression-testing",
+      "label": "Regression Testing",
+      "repository_skill_ids": [
+        "improve-workshop"
+      ],
+      "team_role_references": 4
+    },
+    {
+      "category": "testing",
+      "evidence_status": "not-observed",
+      "id": "property-based-testing",
+      "label": "Property Based Testing",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "testing",
+      "evidence_status": "not-observed",
+      "id": "test-fixtures",
+      "label": "Test Fixtures",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "testing",
+      "evidence_status": "not-observed",
+      "id": "accessibility-testing",
+      "label": "Accessibility Testing",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "testing",
+      "evidence_status": "not-observed",
+      "id": "mobile-testing",
+      "label": "Mobile Testing",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "testing",
+      "evidence_status": "not-observed",
+      "id": "offline-testing",
+      "label": "Offline Testing",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "testing",
+      "evidence_status": "not-observed",
+      "id": "load-testing",
+      "label": "Load Testing",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "security",
+      "evidence_status": "not-observed",
+      "id": "threat-modeling",
+      "label": "Threat Modeling",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "security",
+      "evidence_status": "not-observed",
+      "id": "authorization",
+      "label": "Authorization",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "security",
+      "evidence_status": "not-observed",
+      "id": "authentication",
+      "label": "Authentication",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "security",
+      "evidence_status": "not-observed",
+      "id": "secrets-management",
+      "label": "Secrets Management",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "security",
+      "evidence_status": "not-observed",
+      "id": "secure-code-review",
+      "label": "Secure Code Review",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "security",
+      "evidence_status": "not-observed",
+      "id": "supply-chain-security",
+      "label": "Supply Chain Security",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "security",
+      "evidence_status": "not-observed",
+      "id": "license-compliance",
+      "label": "License Compliance",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "security",
+      "evidence_status": "not-observed",
+      "id": "privacy-engineering",
+      "label": "Privacy Engineering",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "security",
+      "evidence_status": "not-observed",
+      "id": "sandboxing",
+      "label": "Sandboxing",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "security",
+      "evidence_status": "not-observed",
+      "id": "incident-response",
+      "label": "Incident Response",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "operations",
+      "evidence_status": "not-observed",
+      "id": "git-workflows",
+      "label": "Git Workflows",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "operations",
+      "evidence_status": "not-observed",
+      "id": "github-actions",
+      "label": "Github Actions",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "operations",
+      "evidence_status": "not-observed",
+      "id": "continuous-integration",
+      "label": "Continuous Integration",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "operations",
+      "evidence_status": "not-observed",
+      "id": "continuous-delivery",
+      "label": "Continuous Delivery",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "operations",
+      "evidence_status": "not-observed",
+      "id": "containers",
+      "label": "Containers",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "operations",
+      "evidence_status": "not-observed",
+      "id": "linux-administration",
+      "label": "Linux Administration",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "operations",
+      "evidence_status": "not-observed",
+      "id": "observability",
+      "label": "Observability",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "operations",
+      "evidence_status": "not-observed",
+      "id": "logging",
+      "label": "Logging",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "operations",
+      "evidence_status": "not-observed",
+      "id": "deployment",
+      "label": "Deployment",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "operations",
+      "evidence_status": "not-observed",
+      "id": "release-management",
+      "label": "Release Management",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "operations",
+      "evidence_status": "not-observed",
+      "id": "backup-recovery",
+      "label": "Backup Recovery",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "agentic",
+      "evidence_status": "documented-in-repository",
+      "id": "agent-orchestration",
+      "label": "Agent Orchestration",
+      "repository_skill_ids": [
+        "orchestrate-team"
+      ],
+      "team_role_references": 4
+    },
+    {
+      "category": "agentic",
+      "evidence_status": "not-observed",
+      "id": "agent-skills",
+      "label": "Agent Skills",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "agentic",
+      "evidence_status": "documented-in-repository",
+      "id": "tool-routing",
+      "label": "Tool Routing",
+      "repository_skill_ids": [
+        "orchestrate-team"
+      ],
+      "team_role_references": 4
+    },
+    {
+      "category": "agentic",
+      "evidence_status": "documented-in-repository",
+      "id": "multi-agent-coordination",
+      "label": "Multi Agent Coordination",
+      "repository_skill_ids": [
+        "orchestrate-team",
+        "team-council"
+      ],
+      "team_role_references": 12
+    },
+    {
+      "category": "agentic",
+      "evidence_status": "documented-in-repository",
+      "id": "human-agent-governance",
+      "label": "Human Agent Governance",
+      "repository_skill_ids": [
+        "orchestrate-team",
+        "team-council"
+      ],
+      "team_role_references": 12
+    },
+    {
+      "category": "agentic",
+      "evidence_status": "documented-in-repository",
+      "id": "agent-evaluation",
+      "label": "Agent Evaluation",
+      "repository_skill_ids": [
+        "improve-workshop"
+      ],
+      "team_role_references": 4
+    },
+    {
+      "category": "agentic",
+      "evidence_status": "documented-in-repository",
+      "id": "model-evaluation",
+      "label": "Model Evaluation",
+      "repository_skill_ids": [
+        "improve-workshop"
+      ],
+      "team_role_references": 4
+    },
+    {
+      "category": "agentic",
+      "evidence_status": "not-observed",
+      "id": "knowledge-retrieval",
+      "label": "Knowledge Retrieval",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "agentic",
+      "evidence_status": "documented-in-repository",
+      "id": "context-management",
+      "label": "Context Management",
+      "repository_skill_ids": [
+        "orchestrate-team"
+      ],
+      "team_role_references": 4
+    },
+    {
+      "category": "agentic",
+      "evidence_status": "not-observed",
+      "id": "local-ai-inference",
+      "label": "Local Ai Inference",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "agentic",
+      "evidence_status": "not-observed",
+      "id": "graph-modeling",
+      "label": "Graph Modeling",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "collaboration",
+      "evidence_status": "documented-in-repository",
+      "id": "product-management",
+      "label": "Product Management",
+      "repository_skill_ids": [
+        "run-business-cycle"
+      ],
+      "team_role_references": 15
+    },
+    {
+      "category": "collaboration",
+      "evidence_status": "documented-in-repository",
+      "id": "project-management",
+      "label": "Project Management",
+      "repository_skill_ids": [
+        "improve-workshop",
+        "run-business-cycle"
+      ],
+      "team_role_references": 19
+    },
+    {
+      "category": "collaboration",
+      "evidence_status": "not-observed",
+      "id": "issue-triage",
+      "label": "Issue Triage",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "collaboration",
+      "evidence_status": "documented-in-repository",
+      "id": "technical-writing",
+      "label": "Technical Writing",
+      "repository_skill_ids": [
+        "run-business-cycle"
+      ],
+      "team_role_references": 15
+    },
+    {
+      "category": "collaboration",
+      "evidence_status": "not-observed",
+      "id": "contributor-onboarding",
+      "label": "Contributor Onboarding",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "collaboration",
+      "evidence_status": "not-observed",
+      "id": "community-moderation",
+      "label": "Community Moderation",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "collaboration",
+      "evidence_status": "documented-in-repository",
+      "id": "decision-records",
+      "label": "Decision Records",
+      "repository_skill_ids": [
+        "improve-workshop",
+        "run-business-cycle",
+        "team-council"
+      ],
+      "team_role_references": 27
+    },
+    {
+      "category": "collaboration",
+      "evidence_status": "documented-in-repository",
+      "id": "peer-review",
+      "label": "Peer Review",
+      "repository_skill_ids": [
+        "team-council"
+      ],
+      "team_role_references": 8
+    },
+    {
+      "category": "collaboration",
+      "evidence_status": "documented-in-repository",
+      "id": "communication-protocols",
+      "label": "Communication Protocols",
+      "repository_skill_ids": [
+        "orchestrate-team",
+        "team-council"
+      ],
+      "team_role_references": 12
+    },
+    {
+      "category": "collaboration",
+      "evidence_status": "not-observed",
+      "id": "mentoring",
+      "label": "Mentoring",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "design-science",
+      "evidence_status": "not-observed",
+      "id": "user-experience",
+      "label": "User Experience",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "design-science",
+      "evidence_status": "not-observed",
+      "id": "interface-design",
+      "label": "Interface Design",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "design-science",
+      "evidence_status": "documented-in-repository",
+      "id": "geospatial-analysis",
+      "label": "Geospatial Analysis",
+      "repository_skill_ids": [
+        "permaculture-client-delivery"
+      ],
+      "team_role_references": 8
+    },
+    {
+      "category": "design-science",
+      "evidence_status": "documented-in-repository",
+      "id": "geodata-provenance",
+      "label": "Geodata Provenance",
+      "repository_skill_ids": [
+        "permaculture-client-delivery"
+      ],
+      "team_role_references": 8
+    },
+    {
+      "category": "design-science",
+      "evidence_status": "documented-in-repository",
+      "id": "ecological-analysis",
+      "label": "Ecological Analysis",
+      "repository_skill_ids": [
+        "permaculture-client-delivery"
+      ],
+      "team_role_references": 8
+    },
+    {
+      "category": "design-science",
+      "evidence_status": "documented-in-repository",
+      "id": "scientific-validation",
+      "label": "Scientific Validation",
+      "repository_skill_ids": [
+        "permaculture-client-delivery"
+      ],
+      "team_role_references": 8
+    },
+    {
+      "category": "design-science",
+      "evidence_status": "not-observed",
+      "id": "simulation",
+      "label": "Simulation",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "design-science",
+      "evidence_status": "not-observed",
+      "id": "data-visualization",
+      "label": "Data Visualization",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    },
+    {
+      "category": "design-science",
+      "evidence_status": "not-observed",
+      "id": "browser-audio",
+      "label": "Browser Audio",
+      "repository_skill_ids": [],
+      "team_role_references": 0
+    }
+  ],
+  "no_person_or_agent_competence_claims": true,
+  "privacy": "No identities, raw descriptions, paths to user data, contact details, credentials or private assignments",
+  "scanned_skill_assets": [
+    "improve-workshop",
+    "orchestrate-team",
+    "permaculture-client-delivery",
+    "run-business-cycle",
+    "team-council"
+  ],
+  "schema_version": 1,
+  "sources": [
+    ".agents/skills/*/SKILL.md",
+    "teams/*/team.toml"
+  ],
+  "subject": "repository-artifacts-only",
+  "unknown_meaning": "not-observed is not proof that a person or agent lacks the skill"
+}
