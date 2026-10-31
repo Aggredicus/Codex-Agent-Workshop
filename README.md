@@ -85,6 +85,17 @@ memory/                           durable lessons and improvement proposals
 tests/                            mechanical guarantees
 ```
 
+## Community collaboration — contributor gateway (draft)
+
+The [Find Your Place gateway](docs/volunteer/index.html) provides three paths: volunteer for scoped open-source tasks, request possible help for another public project, or propose an independently reviewed reciprocal skill exchange.
+
+- [Contribution guidelines](CONTRIBUTING.md)
+- [Candidate contribution areas](docs/volunteer/index.html) and [potential assistance skills](docs/volunteer/offered-skills.json)
+- [Skill exchange policy and limitations](docs/volunteer/SKILL_EXCHANGE.md)
+- [Publication gates](docs/volunteer/OPERATIONS.md)
+
+This is a **review-stage proposal**. Help requests and trades are nonbinding; the assistance catalog is based on repository evidence, not verified personal qualifications or availability. The GitHub issue forms become usable after merge to the default branch, and a visitor-facing Pages/profile link requires separate publication and verification.
+
 ## Core commands
 
 ```text
