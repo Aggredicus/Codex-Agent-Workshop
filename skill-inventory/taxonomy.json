@@ -1,0 +1,435 @@
+{
+  "schema_version": 1,
+  "description": "Curated, extendible taxonomy of software-development and agent-collaboration capabilities. Categories are not people, endorsements, permission grants or statements of proficiency.",
+  "categories": [
+    {
+      "id": "requirements-engineering",
+      "label": "Requirements Engineering",
+      "category": "engineering"
+    },
+    {
+      "id": "software-architecture",
+      "label": "Software Architecture",
+      "category": "engineering"
+    },
+    {
+      "id": "api-design",
+      "label": "Api Design",
+      "category": "engineering"
+    },
+    {
+      "id": "data-modeling",
+      "label": "Data Modeling",
+      "category": "engineering"
+    },
+    {
+      "id": "python",
+      "label": "Python",
+      "category": "engineering"
+    },
+    {
+      "id": "javascript",
+      "label": "Javascript",
+      "category": "engineering"
+    },
+    {
+      "id": "typescript",
+      "label": "Typescript",
+      "category": "engineering"
+    },
+    {
+      "id": "html-css",
+      "label": "Html Css",
+      "category": "engineering"
+    },
+    {
+      "id": "rust",
+      "label": "Rust",
+      "category": "engineering"
+    },
+    {
+      "id": "go",
+      "label": "Go",
+      "category": "engineering"
+    },
+    {
+      "id": "shell",
+      "label": "Shell",
+      "category": "engineering"
+    },
+    {
+      "id": "sql",
+      "label": "Sql",
+      "category": "engineering"
+    },
+    {
+      "id": "algorithms",
+      "label": "Algorithms",
+      "category": "engineering"
+    },
+    {
+      "id": "performance-engineering",
+      "label": "Performance Engineering",
+      "category": "engineering"
+    },
+    {
+      "id": "refactoring",
+      "label": "Refactoring",
+      "category": "engineering"
+    },
+    {
+      "id": "code-review",
+      "label": "Code Review",
+      "category": "engineering"
+    },
+    {
+      "id": "unit-testing",
+      "label": "Unit Testing",
+      "category": "testing"
+    },
+    {
+      "id": "integration-testing",
+      "label": "Integration Testing",
+      "category": "testing"
+    },
+    {
+      "id": "end-to-end-testing",
+      "label": "End To End Testing",
+      "category": "testing"
+    },
+    {
+      "id": "regression-testing",
+      "label": "Regression Testing",
+      "category": "testing"
+    },
+    {
+      "id": "property-based-testing",
+      "label": "Property Based Testing",
+      "category": "testing"
+    },
+    {
+      "id": "test-fixtures",
+      "label": "Test Fixtures",
+      "category": "testing"
+    },
+    {
+      "id": "accessibility-testing",
+      "label": "Accessibility Testing",
+      "category": "testing"
+    },
+    {
+      "id": "mobile-testing",
+      "label": "Mobile Testing",
+      "category": "testing"
+    },
+    {
+      "id": "offline-testing",
+      "label": "Offline Testing",
+      "category": "testing"
+    },
+    {
+      "id": "load-testing",
+      "label": "Load Testing",
+      "category": "testing"
+    },
+    {
+      "id": "threat-modeling",
+      "label": "Threat Modeling",
+      "category": "security"
+    },
+    {
+      "id": "authorization",
+      "label": "Authorization",
+      "category": "security"
+    },
+    {
+      "id": "authentication",
+      "label": "Authentication",
+      "category": "security"
+    },
+    {
+      "id": "secrets-management",
+      "label": "Secrets Management",
+      "category": "security"
+    },
+    {
+      "id": "secure-code-review",
+      "label": "Secure Code Review",
+      "category": "security"
+    },
+    {
+      "id": "supply-chain-security",
+      "label": "Supply Chain Security",
+      "category": "security"
+    },
+    {
+      "id": "license-compliance",
+      "label": "License Compliance",
+      "category": "security"
+    },
+    {
+      "id": "privacy-engineering",
+      "label": "Privacy Engineering",
+      "category": "security"
+    },
+    {
+      "id": "sandboxing",
+      "label": "Sandboxing",
+      "category": "security"
+    },
+    {
+      "id": "incident-response",
+      "label": "Incident Response",
+      "category": "security"
+    },
+    {
+      "id": "git-workflows",
+      "label": "Git Workflows",
+      "category": "operations"
+    },
+    {
+      "id": "github-actions",
+      "label": "Github Actions",
+      "category": "operations"
+    },
+    {
+      "id": "continuous-integration",
+      "label": "Continuous Integration",
+      "category": "operations"
+    },
+    {
+      "id": "continuous-delivery",
+      "label": "Continuous Delivery",
+      "category": "operations"
+    },
+    {
+      "id": "containers",
+      "label": "Containers",
+      "category": "operations"
+    },
+    {
+      "id": "linux-administration",
+      "label": "Linux Administration",
+      "category": "operations"
+    },
+    {
+      "id": "observability",
+      "label": "Observability",
+      "category": "operations"
+    },
+    {
+      "id": "logging",
+      "label": "Logging",
+      "category": "operations"
+    },
+    {
+      "id": "deployment",
+      "label": "Deployment",
+      "category": "operations"
+    },
+    {
+      "id": "release-management",
+      "label": "Release Management",
+      "category": "operations"
+    },
+    {
+      "id": "backup-recovery",
+      "label": "Backup Recovery",
+      "category": "operations"
+    },
+    {
+      "id": "agent-orchestration",
+      "label": "Agent Orchestration",
+      "category": "agentic"
+    },
+    {
+      "id": "agent-skills",
+      "label": "Agent Skills",
+      "category": "agentic"
+    },
+    {
+      "id": "tool-routing",
+      "label": "Tool Routing",
+      "category": "agentic"
+    },
+    {
+      "id": "multi-agent-coordination",
+      "label": "Multi Agent Coordination",
+      "category": "agentic"
+    },
+    {
+      "id": "human-agent-governance",
+      "label": "Human Agent Governance",
+      "category": "agentic"
+    },
+    {
+      "id": "agent-evaluation",
+      "label": "Agent Evaluation",
+      "category": "agentic"
+    },
+    {
+      "id": "model-evaluation",
+      "label": "Model Evaluation",
+      "category": "agentic"
+    },
+    {
+      "id": "knowledge-retrieval",
+      "label": "Knowledge Retrieval",
+      "category": "agentic"
+    },
+    {
+      "id": "context-management",
+      "label": "Context Management",
+      "category": "agentic"
+    },
+    {
+      "id": "local-ai-inference",
+      "label": "Local Ai Inference",
+      "category": "agentic"
+    },
+    {
+      "id": "graph-modeling",
+      "label": "Graph Modeling",
+      "category": "agentic"
+    },
+    {
+      "id": "product-management",
+      "label": "Product Management",
+      "category": "collaboration"
+    },
+    {
+      "id": "project-management",
+      "label": "Project Management",
+      "category": "collaboration"
+    },
+    {
+      "id": "issue-triage",
+      "label": "Issue Triage",
+      "category": "collaboration"
+    },
+    {
+      "id": "technical-writing",
+      "label": "Technical Writing",
+      "category": "collaboration"
+    },
+    {
+      "id": "contributor-onboarding",
+      "label": "Contributor Onboarding",
+      "category": "collaboration"
+    },
+    {
+      "id": "community-moderation",
+      "label": "Community Moderation",
+      "category": "collaboration"
+    },
+    {
+      "id": "decision-records",
+      "label": "Decision Records",
+      "category": "collaboration"
+    },
+    {
+      "id": "peer-review",
+      "label": "Peer Review",
+      "category": "collaboration"
+    },
+    {
+      "id": "communication-protocols",
+      "label": "Communication Protocols",
+      "category": "collaboration"
+    },
+    {
+      "id": "mentoring",
+      "label": "Mentoring",
+      "category": "collaboration"
+    },
+    {
+      "id": "user-experience",
+      "label": "User Experience",
+      "category": "design-science"
+    },
+    {
+      "id": "interface-design",
+      "label": "Interface Design",
+      "category": "design-science"
+    },
+    {
+      "id": "geospatial-analysis",
+      "label": "Geospatial Analysis",
+      "category": "design-science"
+    },
+    {
+      "id": "geodata-provenance",
+      "label": "Geodata Provenance",
+      "category": "design-science"
+    },
+    {
+      "id": "ecological-analysis",
+      "label": "Ecological Analysis",
+      "category": "design-science"
+    },
+    {
+      "id": "scientific-validation",
+      "label": "Scientific Validation",
+      "category": "design-science"
+    },
+    {
+      "id": "simulation",
+      "label": "Simulation",
+      "category": "design-science"
+    },
+    {
+      "id": "data-visualization",
+      "label": "Data Visualization",
+      "category": "design-science"
+    },
+    {
+      "id": "browser-audio",
+      "label": "Browser Audio",
+      "category": "design-science"
+    }
+  ],
+  "source_skill_map": {
+    "orchestrate-team": [
+      "agent-orchestration",
+      "multi-agent-coordination",
+      "tool-routing",
+      "context-management",
+      "communication-protocols",
+      "human-agent-governance"
+    ],
+    "improve-workshop": [
+      "agent-evaluation",
+      "model-evaluation",
+      "regression-testing",
+      "project-management",
+      "decision-records"
+    ],
+    "team-council": [
+      "multi-agent-coordination",
+      "human-agent-governance",
+      "peer-review",
+      "decision-records",
+      "communication-protocols"
+    ],
+    "run-business-cycle": [
+      "product-management",
+      "project-management",
+      "requirements-engineering",
+      "technical-writing",
+      "decision-records"
+    ],
+    "permaculture-client-delivery": [
+      "geospatial-analysis",
+      "ecological-analysis",
+      "scientific-validation",
+      "geodata-provenance",
+      "requirements-engineering"
+    ]
+  },
+  "safety": {
+    "public_projection": "taxonomy-allowlist-only",
+    "evidence": "approved-repository-local-paths",
+    "unknown_is_not_gap": true,
+    "personal_proficiency_inference": false
+  }
+}
